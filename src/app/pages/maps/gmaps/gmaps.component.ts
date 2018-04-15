@@ -27,13 +27,13 @@ export class GmapsComponent {
   areai = 'Adding Lever';
   areas = ['New Launch', 'Product Innovation', 'Social Media Buzz', 'Brand Equity/ATL', 'Socio Cultural Study'];
   addMode: boolean = false;
-  lever:any = [];
-  optimized = [80,70,85,55, 52, 36, 42, 51, 45, 36, 50, 40];
+  lever: any = [];
+  optimized = [80, 70, 85, 55, 52, 36, 42, 51, 45, 36, 50, 40];
   churns = [80, 70, 85, 55, 61, 50, 59, 71, 78, 81, 87, 92]
-  global:number = 10;
-  segment:any = 0;
-  selectedSegment:any = 0;
-  segmentArray:any = [
+  global: number = 10;
+  segment: any = 0;
+  selectedSegment: any = 0;
+  segmentArray: any = [
     { 
       name: 'Segment',
       value:0
@@ -109,10 +109,10 @@ export class GmapsComponent {
   }
 
   getGlobal(event){
-    this.segment= 0;
+    this.segment = 0;
     this.selectedSegment = 0;
-    this.area=0;
-    this.selectedArea=0;
+    this.area = 0;
+    this.selectedArea = 0;
     for (let i = 0; i < this.segmentArray.length; i++) {
       if(i > 0){
        var val = Math.floor(this.global * ( this.segmentArray[i].value / 3));
@@ -139,22 +139,22 @@ export class GmapsComponent {
     const multi = 1.5 - (this.global/100);
     const hr = multi * 100;
     for (let i = 0; i < this.churns.length; i++) {
-      if( i == 4 ){
+      if( i === 4 ){
         var fr = Math.floor(this.churns[i] * (0.1 * hr));
         var g =  this.churns[i] - Math.floor(fr/100);
         optemp.push(g);
       }
-      if( i == 5 || i == 6 || i == 7 ){
+      if( i === 5 || i === 6 || i === 7 ){
         var fr = Math.floor(this.churns[i] * (0.2 * hr));
         var g =  this.churns[i] - Math.floor(fr/100);
         optemp.push(g);
       }
-      if( i == 8 || i == 10 ){
+      if( i === 8 || i === 10 ){
         var fr = Math.floor(this.churns[i] * (0.3 * hr));
         var g =  this.churns[i] - Math.floor(fr/100);
         optemp.push(g);
       }
-      if( i == 9 || i == 11 ){
+      if( i === 9 || i === 11 ){
         var fr = Math.floor(this.churns[i] * (0.4 * hr));
         var g =  this.churns[i] - Math.floor(fr/100);
         optemp.push(g);

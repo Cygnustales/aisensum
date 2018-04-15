@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
 
 
   toggleSidebar(): boolean {
-    console.log('dlafda')
     this.sidebarService.toggle(true, 'menu-sidebar');
     return false;
   }
