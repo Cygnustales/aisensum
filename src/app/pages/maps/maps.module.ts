@@ -5,6 +5,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { MapsRoutingModule, routedComponents } from './maps-routing.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { EchartsBarComponent } from '../charts/echarts/echarts-bar.component';
+
 
 @NgModule({
   imports: [
@@ -16,10 +19,13 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     LeafletModule.forRoot(),
     MapsRoutingModule,
     NgxEchartsModule,
+    Ng2SmartTableModule,
+    
   ],
   exports: [],
   declarations: [
     ...routedComponents,
+    EchartsBarComponent
   ],
 })
 export class MapsModule { }

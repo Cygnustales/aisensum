@@ -56,6 +56,7 @@ export class StateService {
   }
 
   setSidebarState(state: any): any {
+    console.log(state)
     this.sidebarState$.next(state);
   }
 

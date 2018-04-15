@@ -1,7 +1,7 @@
 <nb-card size="large">
   <nb-tabset fullWidth>
 
-    <nb-tab tabTitle="Temperature">
+    <nb-tab tabTitle="Customer Feedback">
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
@@ -12,9 +12,9 @@
             <div class="value temperature">
               {{ temperatureOff ? '--' : (temperature | ngxRound) }}
             </div>
-            <div class="desc">
+            <!--<div class="desc">
               Celsius
-            </div>
+            </div>-->
           </div>
         </ngx-temperature-dragger>
       </div>
@@ -36,7 +36,7 @@
       </div>
     </nb-tab>
 
-    <nb-tab tabTitle="Humidity">
+    <nb-tab tabTitle="Social Media">
 
       <div class="slider-container">
         <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
@@ -54,16 +54,16 @@
       <div [(ngModel)]="humidityMode" ngbRadioGroup data-toggle="buttons"
            class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width">
         <label class="btn btn-icon">
-          <input type="radio" value="cool"/><i class="nb-snowy-circled"></i>
+          <input type="radio" value="cool"/><i class="ion ion-social-twitter"></i>
         </label>
         <label class="btn btn-icon">
-          <input type="radio" value="warm"/><i class="nb-sunny-circled"></i>
+          <input type="radio" value="warm"/><i class="ion ion-social-facebook"></i>
         </label>
         <label class="btn btn-icon">
-          <input type="radio" value="heat"/><i class="nb-flame-circled"></i>
+          <input type="radio" value="heat"/><i class="ion ion-social-googleplus"></i>
         </label>
         <label class="btn btn-icon">
-          <input type="radio" value="fan"/><i class="nb-loop-circled"></i>
+          <input type="radio" value="fan"/><i class="ion ion-social-instagram-outline"></i>
         </label>
       </div>
     </nb-tab>

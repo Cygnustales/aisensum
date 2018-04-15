@@ -18,11 +18,11 @@ import { D3PieComponent } from './d3/d3-pie.component';
 import { D3AreaStackComponent } from './d3/d3-area-stack.component';
 import { D3PolarComponent } from './d3/d3-polar.component';
 import { D3AdvancedPieComponent } from './d3/d3-advanced-pie.component';
-import { EchartsLineComponent } from './echarts/echarts-line.component';
-import { EchartsPieComponent } from './echarts/echarts-pie.component';
+// import { EchartsLineComponent } from './echarts/echarts-line.component';
+// import { EchartsPieComponent } from './echarts/echarts-pie.component';
 import { EchartsBarComponent } from './echarts/echarts-bar.component';
-import { EchartsMultipleXaxisComponent } from './echarts/echarts-multiple-xaxis.component';
-import { EchartsAreaStackComponent } from './echarts/echarts-area-stack.component';
+// import { EchartsMultipleXaxisComponent } from './echarts/echarts-multiple-xaxis.component';
+// import { EchartsAreaStackComponent } from './echarts/echarts-area-stack.component';
 import { EchartsBarAnimationComponent } from './echarts/echarts-bar-animation.component';
 import { EchartsRadarComponent } from './echarts/echarts-radar.component';
 
@@ -39,11 +39,11 @@ const components = [
   D3AreaStackComponent,
   D3PolarComponent,
   D3AdvancedPieComponent,
-  EchartsLineComponent,
-  EchartsPieComponent,
-  EchartsBarComponent,
-  EchartsMultipleXaxisComponent,
-  EchartsAreaStackComponent,
+  // EchartsLineComponent,
+  // EchartsPieComponent,
+  // EchartsBarComponent,
+  // EchartsMultipleXaxisComponent,
+  // EchartsAreaStackComponent,
   EchartsBarAnimationComponent,
   EchartsRadarComponent,
 ];

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { KittenComponent } from './dashboard/kitten/kitten.component';
 
 const routes: Routes = [{
   path: '',

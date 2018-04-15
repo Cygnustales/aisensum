@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -13,7 +14,9 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
   `],
 })
 export class SmartTableComponent {
+  created: boolean = false;
 
+  
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -59,9 +62,15 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableService) {
+  constructor(private service: SmartTableService, private routes: Router) {
     const data = this.service.getData();
     this.source.load(data);
+  }
+  newProject(){
+    this.created = true;
+  }
+  submit(){
+    this.routes.navigateByUrl('/pages/dashboard')
   }
 
   onDeleteConfirm(event): void {

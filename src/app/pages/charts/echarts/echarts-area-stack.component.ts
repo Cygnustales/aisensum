@@ -22,7 +22,7 @@ export class EchartsAreaStackComponent implements AfterViewInit, OnDestroy {
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight],
+        color: [colors.successLight, colors.dangerLight],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -33,7 +33,7 @@ export class EchartsAreaStackComponent implements AfterViewInit, OnDestroy {
           },
         },
         legend: {
-          data: ['Mail marketing', 'Affiliate advertising', 'Video ad', 'Direct interview', 'Search engine'],
+          data: ['New Customers', 'Churn'],
           textStyle: {
             color: echarts.textColor,
           },
@@ -48,7 +48,7 @@ export class EchartsAreaStackComponent implements AfterViewInit, OnDestroy {
           {
             type: 'category',
             boundaryGap: false,
-            data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
             axisTick: {
               alignWithLabel: true,
             },
@@ -86,49 +86,20 @@ export class EchartsAreaStackComponent implements AfterViewInit, OnDestroy {
         ],
         series: [
           {
-            name: 'Mail marketing',
+            name: 'New Customers',
             type: 'line',
             stack: 'Total amount',
             areaStyle: { normal: { opacity: echarts.areaOpacity } },
-            data: [120, 132, 101, 134, 90, 230, 210],
+            data: [23000, 29000, 21000, 18000, 17000, 175000],
           },
           {
-            name: 'Affiliate advertising',
+            name: 'Churn',
             type: 'line',
             stack: 'Total amount',
             areaStyle: { normal: { opacity: echarts.areaOpacity } },
-            data: [220, 182, 191, 234, 290, 330, 310],
+            data: [12000, 22000, 23000, 24500, 20000, 15000],
           },
-          {
-            name: 'Video ad',
-            type: 'line',
-            stack: 'Total amount',
-            areaStyle: { normal: { opacity: echarts.areaOpacity } },
-            data: [150, 232, 201, 154, 190, 330, 410],
-          },
-          {
-            name: 'Direct interview',
-            type: 'line',
-            stack: 'Total amount',
-            areaStyle: { normal: { opacity: echarts.areaOpacity } },
-            data: [320, 332, 301, 334, 390, 330, 320],
-          },
-          {
-            name: 'Search engine',
-            type: 'line',
-            stack: 'Total amount',
-            label: {
-              normal: {
-                show: true,
-                position: 'top',
-                textStyle: {
-                  color: echarts.textColor,
-                },
-              },
-            },
-            areaStyle: { normal: { opacity: echarts.areaOpacity } },
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-          },
+         
         ],
       };
     });

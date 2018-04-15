@@ -25,28 +25,28 @@ export class EchartsPieComponent implements AfterViewInit, OnDestroy {
         color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight],
         tooltip: {
           trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)',
+          formatter: '{a} <br/>{b} : {d}%',
         },
         legend: {
-          orient: 'vertical',
-          left: 'left',
-          data: ['USA', 'Germany', 'France', 'Canada', 'Russia'],
+          orient: 'horizontal',
+          top: 'top',
+          data: ['Millenials', 'Young Adult', 'Famuilies', 'Traditional', 'XX%'],
           textStyle: {
             color: echarts.textColor,
           },
         },
         series: [
           {
-            name: 'Countries',
+            name: 'Lost Contribution',
             type: 'pie',
-            radius: '80%',
+            radius: '70%',
             center: ['50%', '50%'],
             data: [
-              { value: 335, name: 'Germany' },
-              { value: 310, name: 'France' },
-              { value: 234, name: 'Canada' },
-              { value: 135, name: 'Russia' },
-              { value: 1548, name: 'USA' },
+              { value: 10, name: 'Millenials' },
+              { value: 30, name: 'Young Adult' },
+              { value: 20, name: 'Famuilies' },
+              { value: 30, name: 'Traditional' },
+              { value: 10, name: 'XX%' },
             ],
             itemStyle: {
               emphasis: {

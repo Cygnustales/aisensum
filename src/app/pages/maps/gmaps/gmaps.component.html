@@ -1,0 +1,203 @@
+<div class="col-md-4" style="display:inline-block;">
+<nb-card>
+    <nb-card-header>Bussiness Rules</nb-card-header>
+    <nb-card-body>
+        <div align="center" style="padding:10px;">
+            <p class="detail font-w-light">ACCEPTABLE <b>CHURN RATE</b></p>
+            <div class="input-group mail-btn-group">
+                <span class="input-group-prepend">
+                    <button class="btn btn-primary input-group-text">
+                    Global
+                    </button>
+                </span>
+                <input type="text" class="form-control" [(ngModel)]="global"  (ngModelChange)="getGlobal($event)" placeholder="0">
+                <span class="input-group-append">
+                    <button class="btn btn-primary input-group-text">
+                    %
+                    </button>
+                </span>
+                </div>
+            </div>
+            <div class="input-group" style="padding:10px;">
+                    <div class="dropdown input-group-btn" ngbDropdown>
+                        <select class="form-control"  [(ngModel)]="segment" (ngModelChange)="getSegment()">
+                            <option *ngFor="let segment of segmentArray" [value]="segment.value">{{segment.name}}</option>
+                        </select>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="selectedSegment">
+                    <span class="input-group-append">
+                            <button class="btn btn-primary input-group-text">
+                            %
+                            </button>
+                        </span>
+                </div>
+                <div class="input-group" style="padding:10px;">
+                        <div class="dropdown input-group-btn" ngbDropdown>
+                            <select class="form-control"  [(ngModel)]="area" (ngModelChange)="getArea()">
+                                <option *ngFor="let area of areaArray" [value]="area.value">{{area.name}}</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="selectedArea">
+                        <span class="input-group-append">
+                                <button class="btn btn-primary input-group-text">
+                                %
+                                </button>
+                            </span>
+                    </div>
+            <p class="detail font-w-light" align="center" style="margin-top:20px;">ENTER CHURN <b>PREVENTION BUDGET</b></p>   
+            <div class="input-group mail-btn-group" style="padding:10px;">
+                <span class="input-group-prepend">
+                    <button class="btn btn-primary  input-group-text">
+                    Rp.
+                    </button>
+                </span>
+                <input type="text" class="form-control" placeholder="0">
+            </div>
+            <div align="center" style="margin-bottom:10px;">
+            <button type="button" (click)="optBtn()" class="btn btn-warning">OPTIMUM ALLOCATION</button>
+        </div>
+    </nb-card-body>
+</nb-card>
+</div>
+<div class="col-md-7" style="display:inline-block;">
+<nb-card>
+    <nb-card-header>Overall</nb-card-header>
+    <nb-card-body>
+            <div echarts [options]="options" class="echart"></div>
+    </nb-card-body>
+</nb-card>
+</div>
+<div class="col-4" style="display:inline-block;">
+        <nb-card>
+                <nb-card-header>By Customer Stage</nb-card-header>
+                <nb-card-body>
+                        <div echarts [options]="line" class="echart"></div>
+                    
+                </nb-card-body>
+            </nb-card>
+</div>
+<div class="col-7" style="display:inline-block;">
+        <nb-card>
+                <nb-card-header>Pan Budiness Level</nb-card-header>
+                <nb-card-body>
+                        <div align="left" style="padding:10px;">
+                            <button type="button" (click)="goAdd()" class="btn btn-success btn-with-icon btn-sm" style="display:inline-block;">
+                                <i class="ion ion-ios-plus-outline"></i>
+                                <span>New Lever</span>
+                            </button>
+                        </div>
+                        <div *ngFor="let lv of lever; let i = index" style="margin:10px;">
+                                <button type="button" (click)="goRemove(i)" class="btn btn-warning btn-with-icon btn-sm" style="float:left;margin:10px;">
+                                        <i class="ion ion-ios-minus-outline"></i>
+                                        <span>{{ lv }}</span>
+                                    </button>
+                        </div>
+                        <div align="right" style="padding:10px;" *ngIf="lever != 0"><button type="button" class="btn btn-primary">Simulate Churn Rate</button></div>
+                    <div class="sec" *ngIf="addMode">
+                    <div align="center">
+                        <div class="dropdown col-11" style="display:inline-block; margin:10px;" ngbDropdown>
+                                <button type="button" ngbDropdownToggle class="btn"
+                                        [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+                                  {{ areai }}
+                                </button>
+                                <ul class="dropdown-menu" ngbDropdownMenu>
+                                  <li class="dropdown-item" *ngFor="let t of areas" (click)="selectLever(t)">{{ t }}</li>
+                                </ul>
+                              </div>
+                            </div>
+                    <div align="center">
+                        <div class="form-group col-3" style="display:inline-block;">
+                            <label>Product Area</label>
+                            <select class="form-control">
+                                <option>Saving</option>
+                                <option>Loan</option>
+                                <option>Investment</option>
+                                <option>Kids Plan</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-3" style="display:inline-block;">
+                                <label>Launch Date</label>
+                                <select class="form-control">
+                                    <option>Immediate</option>
+                                    <option>Next Quarter</option>
+                                    <option>Next Fiscal Period</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-3" style="display:inline-block;">
+                                    <label>Region</label>
+                                    <select class="form-control">
+                                        <option>Sumatra</option>
+                                        <option>Java</option>
+                                        <option>Kalimantan</option>
+                                        <option>Sulawesi</option>
+                                        <option>Bali & Nusa</option>
+                                        <option>East Indonesia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div align="center">
+                                    <div class="form-group col-3" style="display:inline-block;">
+                                        <label>Customer Segment</label>
+                                        <select class="form-control">
+                                            <option>Millenials</option>
+                                            <option>Young Adult</option>
+                                            <option>Families</option>
+                                            <option>Traditional</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-3" style="display:inline-block;">
+                                            <label>Coverage</label>
+                                            <select class="form-control">
+                                                <option>National</option>
+                                                <option>Regional</option>
+                                                <option>City Hosting</option>
+                                            </select>
+                                        </div>
+                                        <!--<div class="form-group col-3" style="display:inline-block;">
+                                                <label>Budget</label>
+                                                <select class="form-control">
+                                                    <option>Minsk</option>
+                                                    <option>Gomel</option>
+                                                    <option>Brest</option>
+                                                    <option>Grodno</option>
+                                                    <option>Mogilev</option>
+                                                </select>
+                                            </div>-->
+                                            <div  class="form-group col-3" style="display:inline-block;">
+                                                    <input type="text" class="form-control" placeholder="0">
+                                                </div>
+                                        </div>
+                                    <div align="center" style="margin:10px;">
+                                        <button type="button" class="btn btn-primary" (click)="saveLever()">Save Lever</button>
+                                        <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                                    </div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+</div>
+<div class="col-12">
+<nb-card>
+        <nb-card-header>
+                Data
+        </nb-card-header>
+      
+        <nb-card-body>
+          <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+          </ng2-smart-table>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="col-12" align="center">
+        <nb-card>
+            <nb-card-header>
+                Coverage Heat Map
+            </nb-card-header>      
+            <nb-card-body>
+                <img src="./assets/images/map.jpg" style="width:22.5%; display:inline-block; margin:10px;">
+                <img src="./assets/images/map.jpg" style="width:22.5%; display:inline-block; margin:10px;">
+                <img src="./assets/images/map.jpg" style="width:22.5%; display:inline-block; margin:10px;">
+                <img src="./assets/images/map.jpg" style="width:22.5%; display:inline-block; margin:10px;">
+            </nb-card-body>
+        </nb-card>
+    </div>

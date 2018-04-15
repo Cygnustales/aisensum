@@ -22,14 +22,14 @@ export class EchartsLineComponent implements AfterViewInit, OnDestroy {
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [colors.danger, colors.primary, colors.info],
+        color: [colors.danger],
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}',
         },
         legend: {
           left: 'left',
-          data: ['Line 1', 'Line 2', 'Line 3'],
+          data: ['Prediction'],
           textStyle: {
             color: echarts.textColor,
           },
@@ -37,7 +37,7 @@ export class EchartsLineComponent implements AfterViewInit, OnDestroy {
         xAxis: [
           {
             type: 'category',
-            data: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
             axisTick: {
               alignWithLabel: true,
             },
@@ -81,20 +81,10 @@ export class EchartsLineComponent implements AfterViewInit, OnDestroy {
         },
         series: [
           {
-            name: 'Line 1',
+            name: 'Prediction',
             type: 'line',
-            data: [1, 3, 9, 27, 81, 247, 741, 2223, 6669],
-          },
-          {
-            name: 'Line 2',
-            type: 'line',
-            data: [1, 2, 4, 8, 16, 32, 64, 128, 256],
-          },
-          {
-            name: 'Line 3',
-            type: 'line',
-            data: [1 / 2, 1 / 4, 1 / 8, 1 / 16, 1 / 32, 1 / 64, 1 / 128, 1 / 256, 1 / 512],
-          },
+            data: [450,450,450,450,450,450],
+          }
         ],
       };
     });

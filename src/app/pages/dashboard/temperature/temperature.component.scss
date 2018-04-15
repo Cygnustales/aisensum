@@ -50,9 +50,12 @@
 
       &.temperature::before {
         position: absolute;
-        content: '°';
-        top: 0;
-        right: -1.25rem;
+        content: '%';
+        bottom: 0.5rem;
+        right: -2.5rem;
+        color: nb-theme(color-fg);
+        font-size: 2.5rem;
+        font-weight: nb-theme(font-weight-light);
       }
 
       &.humidity::before {

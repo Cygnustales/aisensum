@@ -32,7 +32,7 @@ const routes: Routes = [
         component: NbLogoutComponent,
       },
       {
-        path: 'request-password',
+        path: 'intro',
         component: NbRequestPasswordComponent,
       },
       {
@@ -41,8 +41,8 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth/login' },
 ];
 
 const config: ExtraOptions = {

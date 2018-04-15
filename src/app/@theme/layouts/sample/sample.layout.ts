@@ -27,10 +27,10 @@ import 'rxjs/add/operator/delay';
       <nb-sidebar class="menu-sidebar"
                    tag="menu-sidebar"
                    responsive
-                   [right]="sidebar.id === 'right'">
+                   [right]="sidebar.id === 'right'" state="compacted">
         <nb-sidebar-header>
           <a href="#" class="btn btn-hero-success main-btn">
-            <i class="ion ion-social-github"></i> <span>Support Us</span>
+            <i class="ion ion-pie-graph"></i> <span>Dashboard</span>
           </a>
         </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>
@@ -135,6 +135,7 @@ export class SampleLayoutComponent  implements OnDestroy {
           this.sidebarService.collapse('menu-sidebar');
         }
       });
+      
   }
 
   ngOnDestroy() {

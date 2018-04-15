@@ -20,8 +20,10 @@ import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
-
-
+import { EchartsAreaStackComponent } from '../charts/echarts/echarts-area-stack.component';
+import { EchartsMultipleXaxisComponent } from '../charts/echarts/echarts-multiple-xaxis.component';
+import { EchartsLineComponent } from '../charts/echarts/echarts-line.component';
+import { EchartsPieComponent } from '../charts/echarts/echarts-pie.component';
 @NgModule({
   imports: [
     ThemeModule,
@@ -45,6 +47,10 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    EchartsAreaStackComponent,
+    EchartsMultipleXaxisComponent,
+    EchartsLineComponent,
+    EchartsPieComponent
   ],
 })
 export class DashboardModule { }
