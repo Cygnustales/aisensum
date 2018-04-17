@@ -6,12 +6,35 @@
     
       <nb-card-body>
         <div>
-            <div class="btn-group" style="margin-bottom:10px;">
-                <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
-                  <i class="ion ion-ios-plus"></i>
-                </button>
-                <button type="button" class="btn btn-primary" (click)="newProject()">New Project</button>
+          <h4 *ngIf="error" style="color:red;">{{ errorMessage }}</h4>
+          <div class="btn-group" style="margin-bottom:10px;">
+            <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
+              <i class="ion ion-ios-plus"></i>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="newProject()">New Project</button>
+          </div>
+          <div class="btn-group" style="margin-bottom:10px;">
+            <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
+              <i class="ion ion-ios-plus"></i>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="lastProject()">Existing Project</button>
+          </div>
+              <div class="input-group" *ngIf="project">
+                <input type="text" class="form-control" [(ngModel)]="projectName" (ngModelChange)="errorMessage = ''" placeholder="Project Name">
+                <span class="input-group-append">
+                  <button class="btn btn-danger input-group-text"  (click)="saveProject()">
+                    Start
+                  </button>
+                </span>
               </div>
+            <div *ngIf="projectList.length > 0">
+              <div *ngFor="let list of projectList" style="margin-bottom:10px;">
+                <span>Project Name : {{ list.name }} </span><br><span> Created : {{ list.date | date }}</span>
+              </div>
+              <button class="btn btn-success btn-tn input-group-text"  (click)="loadProject()">
+                  Load
+                </button>
+            </div>
         </div>
       </nb-card-body>
     </nb-card>
@@ -25,30 +48,42 @@
 
   <nb-card-body>
     <div>
-        <div class="btn-group" style="margin-bottom:10px;">
+        <div class="btn-group" style="margin-bottom:10px;" *ngIf="!cp">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary">Customer Profile</button>
+          <button type="button" class="btn btn-primary" (click)="cpBtn()">Customer Profile</button>
         </div>
-        <div class="btn-group"  style="margin-bottom:10px;">
+        <div style="margin-bottom:10px;" *ngIf="cp">
+          <h5 style="color:yellow;">Customer Profile Loaded</h5>
+        </div>
+        <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!pt">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary">Past Transactions</button>
+          <button type="button" class="btn btn-primary" (click)="ptBtn()">Past Transactions</button>
         </div>
-        <div class="btn-group"  style="margin-bottom:10px;">
+        <div style="margin-bottom:10px;" *ngIf="pt">
+            <h5 style="color:yellow;">Past Transactions Loaded</h5>
+          </div>
+        <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!pmc">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary">Past Marketing Calendar</button>
+          <button type="button" class="btn btn-primary" (click)="pmcBtn()">Past Marketing Calendar</button>
         </div>
-        <div class="btn-group"  style="margin-bottom:10px;">
+        <div style="margin-bottom:10px;" *ngIf="pmc">
+            <h5 style="color:yellow;">Past Marketing Calendars Loaded</h5>
+          </div>
+        <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!plmc">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary">Planned Marketing Calendar</button>
+          <button type="button" class="btn btn-primary" (click)="plmcBtn()">Planned Marketing Calendar</button>
         </div>
+        <div style="margin-bottom:10px;" *ngIf="plmc">
+            <h5 style="color:yellow;">Planned Marketing Calendar Loaded</h5>
+          </div>
     </div>
   </nb-card-body>
 </nb-card>
@@ -85,13 +120,15 @@
         
           <nb-card-body>
             <div>
-                <div class="btn-group" style="margin-bottom:10px;">
+                <div class="btn-group" style="margin-bottom:10px;" *ngIf="!cf"> 
                     <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
                       <i class="ion ion-android-upload"></i>
                     </button>
-                    <button type="button" class="btn btn-primary">Customer Feedback Data</button>
+                    <button type="button" class="btn btn-primary" (click)="cfBtn()">Customer Feedback Data</button>
                   </div>
-                 
+                  <div style="margin-bottom:10px;" *ngIf="cf">
+                      <h5 style="color:yellow;">Customer Feedback Data Loaded</h5>
+                    </div>
             </div>
           </nb-card-body>
         </nb-card>

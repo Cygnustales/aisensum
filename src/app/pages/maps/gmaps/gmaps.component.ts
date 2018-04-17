@@ -85,6 +85,8 @@ export class GmapsComponent {
   constructor(private service: SmartTableService,private theme: NbThemeService) {
     const data = this.service.getData();
     this.source.load(data);
+    var lv =  JSON.parse(localStorage.project)
+    this.lever = lv[0].lever
   }
 
   goAdd(){
@@ -93,6 +95,10 @@ export class GmapsComponent {
 
   goRemove(i){
     this.lever.splice(i, 1);
+    var projects = localStorage.project;
+    var data = JSON.parse(projects);
+      data[0].lever = this.lever
+      localStorage.setItem('project', JSON.stringify(data)) 
   }
 
   cancel(){
@@ -104,8 +110,17 @@ export class GmapsComponent {
   }
 
   saveLever(){
-    this.lever.push(this.areai);
-    this.addMode = false;
+    var projects = localStorage.project;
+    if(projects){
+      this.lever.push(this.areai);
+      this.addMode = false;
+      var data = JSON.parse(projects);
+      data[0].lever = this.lever
+      localStorage.setItem('project', JSON.stringify(data)) 
+      // console.log(data)
+      // console.log(JSON.parse(localStorage.project));
+    }
+    
   }
 
   getGlobal(event){
