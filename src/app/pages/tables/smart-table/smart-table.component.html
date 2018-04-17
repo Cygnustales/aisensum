@@ -31,9 +31,12 @@
               <div *ngFor="let list of projectList" style="margin-bottom:10px;">
                 <span>Project Name : {{ list.name }} </span><br><span> Created : {{ list.date | date }}</span>
               </div>
-              <button class="btn btn-success btn-tn input-group-text"  (click)="loadProject()">
+              <button class="btn btn-success btn-tn input-group-text" style="display:inline-block; margin: 10px;"  (click)="loadProject()">
                   Load
                 </button>
+                <button class="btn btn-danger btn-tn input-group-text" style="display:inline-block; margin: 10px;" (click)="deleteProject()">
+                    Delete
+                  </button>
             </div>
         </div>
       </nb-card-body>

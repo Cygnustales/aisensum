@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
@@ -32,7 +32,7 @@ export class SmartTableComponent {
     const data = this.service.getData();
     this.source.load(data);
   }
-  
+ 
   cpBtn(){
     this.cp = true;
   }
@@ -139,6 +139,12 @@ export class SmartTableComponent {
 
   loadProject(){
     this.routes.navigateByUrl('/pages/dashboard')
+  }
+
+  deleteProject(){
+    this.project = false;
+    this.projectList = [];
+    localStorage.removeItem('project')
   }
 
   onDeleteConfirm(event): void {
