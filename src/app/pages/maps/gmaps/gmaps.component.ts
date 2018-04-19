@@ -23,6 +23,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GmapsComponent {
   title:any;
   params:any;
+  peta:any;
   options: any = {};
   line: any = {};
   themeSubscription: any;
@@ -95,16 +96,22 @@ export class GmapsComponent {
     this.params =  this.route.snapshot.queryParamMap.get('id');
     if(this.params === '1'){
       this.title = 'Kalideres'
+      this.peta = './assets/images/maps/xdr.png';
     }else if(this.params === '2'){
       this.title = 'Cengkareng'
+      this.peta = './assets/images/maps/ckg.png';
     }else if(this.params === '3'){
       this.title = 'Kebon Jeruk'
+      this.peta = './assets/images/maps/kbj.png';
     }else if(this.params === '4'){
       this.title = 'Grogol'
+      this.peta = './assets/images/maps/grg.png';
     }else if(this.params === '5'){
       this.title = 'Kembangan'
+      this.peta = './assets/images/maps/kmb.png';
     }else if(this.params === '6'){
       this.title = 'Jakarta Barat'
+      this.peta = './assets/images/maps/jbr.png';
     }
     //this.segment();
   }
