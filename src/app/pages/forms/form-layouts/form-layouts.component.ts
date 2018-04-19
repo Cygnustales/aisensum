@@ -276,9 +276,9 @@ export class FormLayoutsComponent {
   }
 
   mapBtn(p){
-    this.routes.navigateByUrl('/pages/play/book?id='+p)
+    this.routes.navigateByUrl('/churn/play/book?id='+p)
   }
   backBtn(){
-    this.routes.navigateByUrl('/pages/dashboard')
+    this.routes.navigateByUrl('/churn/dashboard')
   }
 }

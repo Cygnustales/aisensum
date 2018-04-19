@@ -220,8 +220,25 @@ export class GmapsComponent {
             type: 'cross',
           },
         },
+        toolbox: {
+          show : true,
+          orient: 'horizontal',
+          x: 'right',
+          y: 'top',
+          z: 3,
+          color : ['#1e90ff','#22bb22','#4b0082'],
+          backgroundColor: 'rgba(0,0,0,0)',
+          borderColor: '#FFFFF', 
+          feature : {
+              mark : {show: false},
+              dataView : {show: false, readOnly: false, title: 'Data View'},
+              magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
+              restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+              saveAsImage : {show: true, title: 'Save', name:'Churn', type: 'png', icon:'image://./assets/images/icon/save.png'}
+          }
+      },
         legend: {
-          left: 'left',
+          center: 'center',
           data: ['Churn', 'Optimized'],
           textStyle: {
             color: echarts.textColor,
@@ -366,8 +383,25 @@ export class GmapsComponent {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}',
         },
+        toolbox: {
+          show : true,
+          orient: 'horizontal',
+          x: 'right',
+          y: 'top',
+          z: 3,
+          color : ['#1e90ff','#22bb22','#4b0082'],
+          backgroundColor: 'rgba(0,0,0,0)',
+          borderColor: '#FFFFF', 
+          feature : {
+              mark : {show: false},
+              dataView : {show: false, readOnly: false, title: 'Data View'},
+              magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
+              restore : {show: true, title:'Original',icon:'image://./assets/images/icon/restore.png'},
+              saveAsImage : {show: true, title: 'Save', name:'Churned', type: 'png',icon:'image://./assets/images/icon/save.png'}
+          }
+      },
         legend: {
-          left: 'left',
+          center: 'center',
           data: ['Churned', 'Increasing', 'Decreasing'],
           textStyle: {
             color: echarts.textColor,

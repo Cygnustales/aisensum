@@ -89,8 +89,8 @@ export class DashboardComponent {
               mark : {show: false},
               dataView : {show: false, readOnly: false, title: 'Data View'},
               magicType: {show: true, type: ['line'], title:{line:'Line Chart'}},
-              restore : {show: true, title:'Original'},
-              saveAsImage : {show: true, title: 'Save', name:'New vs Churned Customers', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+              restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+              saveAsImage : {show: true, title: 'Save', name:'New vs Churned Customers', type: 'png', icon:'image://./assets/images/icon/save.png'}
           }
       },
       calculable : true,
@@ -246,8 +246,8 @@ lost(){
             mark : {show: false},
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
-            restore : {show: true, title:'Original'},
-            saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+            restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+            saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -380,8 +380,8 @@ pie(){
             mark : {show: false},
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['line'], title:{line:'Line Chart'}},
-            restore : {show: true, title:'Original'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+            restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -457,8 +457,8 @@ banking(){
             mark : {show: false},
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
-            restore : {show: true, title:'Original'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution (banking)', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+            restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution (banking)', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -536,8 +536,8 @@ segment(){
             mark : {show: false},
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
-            restore : {show: true, title:'Original'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+            restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -589,11 +589,11 @@ segment(){
 
 
   mapBtn(p){
-    this.routes.navigateByUrl('/pages/lost/area?id='+p)
+    this.routes.navigateByUrl('/churn/lost/area?id='+p)
   }
 
   goAway(){
-    this.routes.navigateByUrl('/pages/maps/gmaps')
+    this.routes.navigateByUrl('/churn/maps/gmaps')
     //go to gmap
   }
 }

@@ -30,7 +30,7 @@ const routes: Routes = [{
     path: 'lost',
     loadChildren: './forms/forms.module#FormsModule',
   }, {
-    path: 'tables',
+    path: 'project',
     loadChildren: './tables/tables.module#TablesModule',
   }, {
     path: '',

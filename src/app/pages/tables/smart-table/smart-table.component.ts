@@ -134,11 +134,11 @@ export class SmartTableComponent {
       lever: []
     }]
     localStorage.setItem('project', JSON.stringify(project))
-    this.routes.navigateByUrl('/pages/dashboard')
+    this.routes.navigateByUrl('/churn/dashboard')
   }
 
   loadProject(){
-    this.routes.navigateByUrl('/pages/dashboard')
+    this.routes.navigateByUrl('/churn/dashboard')
   }
 
   deleteProject(){

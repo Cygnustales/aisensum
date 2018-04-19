@@ -4,20 +4,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Database',
     icon: 'nb-tables',
-    link: '/pages/tables/smart-table',
+    link: '/churn/project',
   },
   {
     title: 'Dashboard',
     icon: 'nb-bar-chart',
-    link: '/pages/dashboard',
+    link: '/churn/dashboard',
     home: true,
   },
-  {
-    title: 'Area',
-    icon: 'nb-location',
-    link: '/pages/maps/gmaps',
+  // {
+  //   title: 'Area',
+  //   icon: 'nb-location',
+  //   link: '/churn/',
 
-  },
+  // },
   // {
   //   title: 'UI Features',
   //   icon: 'nb-keypad',
