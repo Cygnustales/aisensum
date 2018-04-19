@@ -587,7 +587,11 @@ segment(){
   });
 }
 
+
+
+
   goAway(){
     this.routes.navigateByUrl('/pages/maps/gmaps')
+    //go to gmap
   }
 }
