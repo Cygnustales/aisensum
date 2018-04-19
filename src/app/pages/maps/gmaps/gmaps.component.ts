@@ -529,6 +529,6 @@ export class GmapsComponent {
   }
 
   mapBtn(){
-    this.routes.navigateByUrl('/pages/lost/area?id='+this.params)
+    this.routes.navigateByUrl('/churn/lost/area?id='+this.params)
   }
 }
