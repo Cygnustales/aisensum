@@ -12,7 +12,7 @@ const routes: Routes = [{
     path: 'inputs',
     component: FormInputsComponent,
   }, {
-    path: 'layouts',
+    path: 'area',
     component: FormLayoutsComponent,
   }],
 }];

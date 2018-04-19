@@ -27,7 +27,7 @@ const routes: Routes = [{
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
   }, {
-    path: 'forms',
+    path: 'lost',
     loadChildren: './forms/forms.module#FormsModule',
   }, {
     path: 'tables',

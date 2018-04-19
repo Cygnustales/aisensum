@@ -9,7 +9,7 @@ import { NbThemeService } from '@nebular/theme';
 })
 export class DashboardComponent {
   currentTheme:any;
-  type = 'Area';
+  type = 'Jakarta';
   types = ['Jakarta'];
   stage = "Life Stage"
   stages = ['Life Stages', 'Banking Products ', 'Segment']
@@ -588,7 +588,9 @@ segment(){
 }
 
 
-
+  mapBtn(p){
+    this.routes.navigateByUrl('/pages/lost/area?id='+p)
+  }
 
   goAway(){
     this.routes.navigateByUrl('/pages/maps/gmaps')
