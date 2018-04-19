@@ -13,6 +13,7 @@ export class FormLayoutsComponent {
   params:any;
   themeSubscription: any;
   charts:any;
+  pies: any = {};
 
   constructor(private routes:Router, private theme: NbThemeService, private route: ActivatedRoute) {
 
@@ -33,6 +34,7 @@ export class FormLayoutsComponent {
       this.title = 'Jakarta Barat'
     }
     this.segment();
+    this.pie();
   }
 
   segment(){
@@ -136,5 +138,147 @@ export class FormLayoutsComponent {
         ],
       };
     });
+  }
+
+  pie(){
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+  
+      const colors = config.variables;
+      const echarts: any = config.variables.echarts;
+      var dataStyle = {
+        normal: {
+            label: {show:false},
+            labelLine: {show:false}
+        }
+    };
+    var placeHolderStyle = {
+        normal : {
+            color: 'rgba(0,0,0,0.2)',
+            label: {show:true},
+            labelLine: {show:true}
+        },
+        emphasis : {
+            color: 'rgba(0,0,0,1)'
+        }
+    };
+    this.pies = {
+        title: {
+            text: '你幸福吗？',
+            subtext: 'From ExcelHome',
+            sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
+            x: 'center',
+            y: 'center',
+            itemGap: 20,
+            textStyle : {
+                color : 'rgba(30,144,255,0.8)',
+                fontFamily : '微软雅黑',
+                fontSize : 35,
+                fontWeight : 'bolder'
+            }
+        },
+        tooltip : {
+            show: true,
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient : 'vertical',
+            x : 10,
+            y : 45,
+            itemGap:12,
+            data:['Trial','Onboarding','Growth','Renewall']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        series : [
+            {
+                name:'1',
+                type:'pie',
+                clockWise:false,
+                radius : [42, 50],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:82,
+                        name:'Trial'
+                    },
+                    {
+                        value:18,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+            {
+                name:'2',
+                type:'pie',
+                clockWise:false,
+                radius : [32, 40],
+                itemStyle : dataStyle,
+                data:[
+                    {
+                        value:29, 
+                        name:'Onboarding'
+                    },
+                    {
+                        value:71,
+                        name:'invisible',
+                        itemStyle : placeHolderStyle
+                    }
+                ]
+            },
+            {
+              name:'3',
+              type:'pie',
+              clockWise:false,
+              radius : [24, 30],
+              itemStyle : dataStyle,
+              data:[
+                  {
+                      value:30, 
+                      name:'Growth'
+                  },
+                  {
+                      value:70,
+                      name:'invisible',
+                      itemStyle : placeHolderStyle
+                  }
+              ]
+          },
+          {
+            name:'3',
+            type:'pie',
+            clockWise:false,
+            radius : [14, 20],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:30, 
+                    name:'Renewall'
+                },
+                {
+                    value:70,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        }
+        ]
+    };
+                              
+    });
+  }
+
+  mapBtn(p){
+    this.routes.navigateByUrl('/pages/play/book?id='+p)
+  }
+  backBtn(){
+    this.routes.navigateByUrl('/pages/dashboard')
   }
 }

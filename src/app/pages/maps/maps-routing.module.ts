@@ -13,7 +13,7 @@ const routes: Routes = [{
   path: '',
   component: MapsComponent,
   children: [{
-    path: 'gmaps',
+    path: 'book',
     component: GmapsComponent,
   }, {
     path: 'leaflet',

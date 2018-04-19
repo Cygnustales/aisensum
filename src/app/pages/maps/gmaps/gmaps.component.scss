@@ -11,4 +11,37 @@
     height: nb-theme(card-height-large);
   }
 }
-
+.combined{
+  float: left;
+  width:50%;
+}
+.combined1{
+  float: left;
+  width:25%;
+}
+.combined2{
+  float: left;
+  width:37%;
+  margin-top:5px;
+}
+.combined3{
+  float: left;
+  width:75%;
+  margin-top:5px;
+  padding: 10px;
+}
+th{
+  text-align: center;
+  padding:10px;
+  background-color: rgba($color: white, $alpha: .2);
+  
+}
+td{
+  text-align: center;
+  height: 32px;
+  border: 1px solid rgba($color: white, $alpha: .5);
+}
+table{
+  border: 1px solid rgba($color: white, $alpha: .5);
+  border-radius: 10px;
+}

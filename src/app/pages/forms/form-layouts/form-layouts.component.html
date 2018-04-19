@@ -1,26 +1,30 @@
 <div class="col-xxxl-12">
+    <nb-card>
+        <nb-card-header (click)="backBtn()" style="cursor: pointer;">Back to Dashboard</nb-card-header>
+       
+    </nb-card>
+</div>
   <div class="col-xxxl-12">
-
-      
       <nb-card class="inline-form-card">
           <nb-card-header>{{ title }}</nb-card-header>
           <nb-card-body>
             <div class="combined">
               <div align="center">
-                  <img class="jakbar" src="./assets/images/maps/Jakbar.png" *ngIf="title == 'Jakarta Barat'">
-                  <img class="cengkareng" src="./assets/images/maps/Cengkareng.png" *ngIf="title == 'Cengkareng'">
-                  <img class="kalideres" src="./assets/images/maps/Kalideres.png"  *ngIf="title == 'Kalideres'">
+                  <img class="jakbar" src="./assets/images/maps/Jakbar.png" *ngIf="title == 'Jakarta Barat'" (click)="mapBtn(6)">
+                  <img class="cengkareng" src="./assets/images/maps/Cengkareng.png" *ngIf="title == 'Cengkareng'" (click)="mapBtn(2)">
+                  <img class="kalideres" src="./assets/images/maps/Kalideres.png"  *ngIf="title == 'Kalideres'" (click)="mapBtn(1)">
                   
-                  <img class="kembangan" src="./assets/images/maps/Kembangan.png" *ngIf="title == 'Kembangan'">
-                  <img class="jeruk" src="./assets/images/maps/Jeruk.png"  *ngIf="title == 'Kebon Jeruk'">
-                  <img class="grogol" src="./assets/images/maps/Grogol.png" *ngIf="title == 'Grogol'">
+                  <img class="kembangan" src="./assets/images/maps/Kembangan.png" *ngIf="title == 'Kembangan'" (click)="mapBtn(5)">
+                  <img class="jeruk" src="./assets/images/maps/Jeruk.png"  *ngIf="title == 'Kebon Jeruk'" (click)="mapBtn(3)">
+                  <img class="grogol" src="./assets/images/maps/Grogol.png" *ngIf="title == 'Grogol'" (click)="mapBtn(4)">
                 <img src="./assets/images/maps/Jakarta.png" class="main-map" style="margin-top:15px;border-radius:5px;cursor:pointer;">
               </div>
             </div>
             <div class="combined">
                 <div echarts [options]="charts" class="echart"></div>
             </div>
-            <div class="combined" align="left" style="padding:10px;">
+            <div class="combined2" align="left" style="padding:10px;">
+        
               <table style="width: 100%;">
                 <tr>
                     <td>Poor Marketing Response</td>
@@ -59,121 +63,63 @@
                 </tr>
               </table>
             </div>
-            <div class="combined">
+            <div class="combined2" align="center">
+                
                 <table style="width: 100%;" class="tables">
-                  <th></th>
                   <th>Trial</th>
                   <th>Onboarding</th>
                   <th>Growth</th>
                   <th>Renewall</th>
                   <tr>
-                      <td>Poor Marketing Response</td>
-                      <td>82%</td>
-                      <td>80%</td>
                       <td>96%</td>
-                      <td>81%</td>
+                      <td>96%</td>
+                      <td>96%</td>
+                      <td>96%</td>
                   </tr>
                   <tr>
-                      <td></td>
-                      <td>120%</td>
-                      <td>103%</td>
-                      <td>121%</td>
-                      <td>119%</td>
+                      <td>78%</td>
+                      <td>78%</td>
+                      <td>78%</td>
+                      <td>78%</td>
                   </tr>
                   <tr>
-                      <td>Low Customers Satisfaction</td>
-                      
-                      <td>12%</td>
-                      <td>74 M</td>
-                      <td>126 M</td>
-                      <td>126 M</td>
+                      <td>84%</td>
+                      <td>84%</td>
+                      <td>84%</td>
+                      <td>84%</td>
                   </tr>
                   <tr>
-                    
-                      <td></td>
-                      <td>5%</td>
-                      <td>34 M</td>
-                      <td>126 M</td>
-                      <td>126 M</td>
+                      <td>96%</td>
+                      <td>96%</td>
+                      <td>96%</td>
+                      <td>96%</td>
                   </tr>
-                  <tr>
-                      <td>Product Decommissions / Change</td>
-                      
-                      <td>30%</td>
-                      <td>67 M</td>
-                      <td>126 M</td>
-                      <td>126 M</td>
-                  </tr>
-                  <tr>
-                      <td></td>
-                      <td>10%</td>
-                      <td>32 M</td>
-                      <td>126 M</td>
-                      <td>126 M</td>
-                  </tr>
-                  <tr>
-                      <td>Socio Cultural Trends</td>
-                      <td>15%</td>
-                      <td>87 M</td>
-                      <td>126 M</td>
-                      <td>126 M</td>
-                  </tr>
-                  <tr>
-                        <td></td>
-                        <td>20%</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
+                    <tr>
+                      <td>95%</td>
+                      <td>95%</td>
+                      <td>95%</td>
+                      <td>95%</td>
                     </tr>
                     <tr>
-                        <td>Low Customers Satisfaction</td>
-                        <td>8%</td>
-                        <td>76 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
+                      <td>96%</td>
+                      <td>96%</td>
+                      <td>96%</td>
+                      <td>96%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>12%</td>
-                        <td>74 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
+                        <td>89%</td>
+                        <td>89%</td>
+                        <td>89%</td>
+                        <td>89%</td>
                     </tr>
-                    <tr>
-                        <td>Restriction & Coverage</td>
-                        <td>5%</td>
-                        <td>34 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>30%</td>
-                        <td>67 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
-                    </tr>
-                    <tr>
-                        <td>Negative Media Buzz</td>
-                        <td>10%</td>
-                        <td>32 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>15%</td>
-                        <td>87 M</td>
-                        <td>126 M</td>
-                        <td>126 M</td>
-                    </tr>
+
                   </table>
             </div>
           </nb-card-body>
         </nb-card>
       
   </div>
-</div>
+
 
 <!--<div class="row">
   <div class="col-md-12">

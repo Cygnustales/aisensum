@@ -3,6 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-gmaps',
@@ -20,7 +21,8 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
   // `,
 })
 export class GmapsComponent {
-
+  title:any;
+  params:any;
   options: any = {};
   line: any = {};
   themeSubscription: any;
@@ -82,11 +84,29 @@ export class GmapsComponent {
   
         ]
 
-  constructor(private service: SmartTableService,private theme: NbThemeService) {
+  constructor(private service: SmartTableService,private theme: NbThemeService, private route: ActivatedRoute, private routes:Router) {
     const data = this.service.getData();
     this.source.load(data);
     var lv =  JSON.parse(localStorage.project)
     this.lever = lv[0].lever
+  }
+
+  ngOnInit(): void {
+    this.params =  this.route.snapshot.queryParamMap.get('id');
+    if(this.params === '1'){
+      this.title = 'Kalideres'
+    }else if(this.params === '2'){
+      this.title = 'Cengkareng'
+    }else if(this.params === '3'){
+      this.title = 'Kebon Jeruk'
+    }else if(this.params === '4'){
+      this.title = 'Grogol'
+    }else if(this.params === '5'){
+      this.title = 'Kembangan'
+    }else if(this.params === '6'){
+      this.title = 'Jakarta Barat'
+    }
+    //this.segment();
   }
 
   goAdd(){
@@ -201,6 +221,7 @@ export class GmapsComponent {
           },
         },
         legend: {
+          left: 'left',
           data: ['Churn', 'Optimized'],
           textStyle: {
             color: echarts.textColor,
@@ -471,5 +492,9 @@ export class GmapsComponent {
   }
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
+  }
+
+  mapBtn(){
+    this.routes.navigateByUrl('/pages/lost/area?id='+this.params)
   }
 }
