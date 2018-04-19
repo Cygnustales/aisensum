@@ -63,8 +63,8 @@ export class FormLayoutsComponent {
               mark : {show: false},
               dataView : {show: false, readOnly: false, title: 'Data View'},
               magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
-              restore : {show: true, title:'Original'},
-              saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', type: 'png', color:'#fff', borderColor: '#FFFFF',}
+              restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
+              saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', type: 'png', icon:'image://./assets/images/icon/save.png'}
           }
       },
         legend: {
