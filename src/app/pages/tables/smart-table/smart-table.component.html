@@ -1,3 +1,34 @@
+<div class="col-xxxl-12" style="margin-bottom: 20px;" *ngIf="browse">
+    <nb-card>
+        <nb-card-header>
+          Select <b style="color:yellow;">{{ database }}</b> Database to Import
+        </nb-card-header>
+      
+        <nb-card-body>
+          <div class="col-12" *ngFor="let db of list" >
+            <div style="width: 150px; text-align: center;background-color:white; float: left; margin: 10px; height: 70px; padding-top: 8px; overflow: hidden; border-radius: 10px">
+            <img [src]="db.logo" style="height: 50px;" (click)="selected(database, db.name)">
+          </div>
+          </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+
+<div class="col-xxxl-12" style="margin-bottom: 20px;" *ngIf="browse2">
+    <nb-card>
+        <nb-card-header>
+          Select <b style="color:yellow;">{{ database }}</b> File to Import
+        </nb-card-header>
+      
+        <nb-card-body>
+          <div class="col-12" *ngFor="let db of exc" >
+            <div style="width: 150px; text-align: center;background-color:white; float: left; margin: 10px; height: 70px; padding-top: 8px; overflow: hidden; border-radius: 10px">
+            <img [src]="db.logo" style="height: 50px;" (click)="selected(database, db.name)">
+          </div>
+          </div>
+        </nb-card-body>
+    </nb-card>
+</div>
 <div class="col-11" *ngIf="!created">
     <nb-card>
       <nb-card-header>
@@ -55,37 +86,37 @@
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary" (click)="cpBtn()">Customer Profile</button>
+          <button type="button" class="btn btn-primary" (click)="cpBtn('Customer Profile')">Customer Profile</button>
         </div>
         <div style="margin-bottom:10px;" *ngIf="cp">
-          <h5 style="color:yellow;">Customer Profile Loaded</h5>
+          <h5 style="color:yellow;">{{ cptext}}</h5>
         </div>
         <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!pt">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary" (click)="ptBtn()">Past Transactions</button>
+          <button type="button" class="btn btn-primary" (click)="ptBtn('Past Transactions')">Past Transactions</button>
         </div>
         <div style="margin-bottom:10px;" *ngIf="pt">
-            <h5 style="color:yellow;">Past Transactions Loaded</h5>
+            <h5 style="color:yellow;">{{ pttext }}</h5>
           </div>
         <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!pmc">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary" (click)="pmcBtn()">Past Marketing Calendar</button>
+          <button type="button" class="btn btn-primary" (click)="pmcBtn('Past Marketing Calendar')">Past Marketing Calendar</button>
         </div>
         <div style="margin-bottom:10px;" *ngIf="pmc">
-            <h5 style="color:yellow;">Past Marketing Calendars Loaded</h5>
+            <h5 style="color:yellow;">{{ pmctext }}</h5>
           </div>
         <div class="btn-group"  style="margin-bottom:10px;" *ngIf="!plmc">
           <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
             <i class="ion ion-android-upload"></i>
           </button>
-          <button type="button" class="btn btn-primary" (click)="plmcBtn()">Planned Marketing Calendar</button>
+          <button type="button" class="btn btn-primary" (click)="plmcBtn('Planned Marketing Calendar')">Planned Marketing Calendar</button>
         </div>
         <div style="margin-bottom:10px;" *ngIf="plmc">
-            <h5 style="color:yellow;">Planned Marketing Calendar Loaded</h5>
+            <h5 style="color:yellow;">{{ plmctext }}</h5>
           </div>
     </div>
   </nb-card-body>
@@ -127,10 +158,10 @@
                     <button type="button" class="btn btn-primary btn-group-icon btn-group-divider">
                       <i class="ion ion-android-upload"></i>
                     </button>
-                    <button type="button" class="btn btn-primary" (click)="cfBtn()">Customer Feedback Data</button>
+                    <button type="button" class="btn btn-primary" (click)="cfBtn('Customer Feedback Data')">Customer Feedback Data</button>
                   </div>
                   <div style="margin-bottom:10px;" *ngIf="cf">
-                      <h5 style="color:yellow;">Customer Feedback Data Loaded</h5>
+                      <h5 style="color:yellow;">{{ cftext }}</h5>
                     </div>
             </div>
           </nb-card-body>
@@ -138,3 +169,4 @@
         </div>
         <div class="col-11"> <button type="button" class="btn btn-success" (click)="submit()">Submit</button></div>
       </div>
+

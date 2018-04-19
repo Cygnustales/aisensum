@@ -165,9 +165,9 @@ export class DashboardComponent {
               },
             },
             data: [
-              '',
-              '',
-              '',
+              'Actual',
+              'Actual',
+              'Actual',
               'Prediction',
               'Prediction',
               'Prediction'
@@ -301,9 +301,9 @@ lost(){
             },
           },
           data: [
-            '',
-            '',
-            '',
+            'Actual',
+            'Actual',
+            'Actual',
             'Prediction',
             'Prediction',
             'Prediction'
