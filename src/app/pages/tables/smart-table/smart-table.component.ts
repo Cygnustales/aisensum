@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   `],
 })
 export class SmartTableComponent {
-  created: boolean = true;
+  created: boolean = false;
   project:boolean = false;
   error:boolean = false;
   cp:boolean = false;
