@@ -522,7 +522,7 @@ export class GmapsComponent {
           feature : {
               mark : {show: false},
               dataView : {show: false, readOnly: false, title: 'Data View'},
-              magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
+              magicType: {show: false, type: ['bar'], title:{bar:'Bar Chart'}},
               restore : {show: true, title:'Original',icon:'image://./assets/images/icon/restore.png'},
               saveAsImage : {show: true, title: 'Save', name:'Churned', type: 'png',icon:'image://./assets/images/icon/save.png'}
           }
@@ -537,7 +537,7 @@ export class GmapsComponent {
         xAxis: [
           {
             type: 'category',
-            data: ['Trial', 'Onboarding', 'Growth', 'Renewal'],
+            data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             axisTick: {
               alignWithLabel: true,
             },
@@ -552,6 +552,25 @@ export class GmapsComponent {
               },
             },
           },
+          {
+            type: 'category',
+            position: 'top',
+            data: ['Trial','Onboarding', 'Growth','Renewal'],
+            axisTick: {
+              alignWithLabel: true,
+            },
+            axisLine: {
+              lineStyle: {
+                color: 'white',
+              },
+            },
+            axisLabel: {
+              textStyle: {
+                color: echarts.textColor,
+              },
+            },
+          },
+          
         ],
         yAxis: [
           {
@@ -579,49 +598,16 @@ export class GmapsComponent {
           bottom: '3%',
           containLabel: true,
         },
-        series: [
+        series: [ 
           {
             name: 'Increasing Value',
             type: 'line',
-            data: [ {
-              value: 30,
-              symbol: 'circle',
-              symbolSize : 0,
-              symbolRotate : 10,
-              itemStyle: {  
-                  normal: {
-                      color: 'white',
-                      lineStyle: {   
-                        width: 2,
-                        type: 'dash'
-                      }
-                  },
-                  emphasis: {
-                      color: 'orange',
-                  }
-              }
-          },{
-              value: 45,
-              symbol: 'arrow',
-              symbolSize : 0,
-              symbolRotate : 10,
-              itemStyle: {   
-                  normal: {
-                      color: 'white',
-                      lineStyle: { 
-                        width: 2,
-                        type: 'dash'
-                      }
-                  },
-                  emphasis: {
-                      color: 'orange',
-                  }
-              }
-            },60,73],
+            data: ['-', 32,  {value:36, symbol:'arrow',symbolSize:15, symbolRotate:285}, '-', 43,  {value:48, symbol:'arrow',symbolSize:15, symbolRotate:285}
+            , '-', 55,  {value:62, symbol:'arrow',symbolSize:15, symbolRotate:285}],
             smooth: true,
             markPoint : {
               symbol:'circle',
-              symbolSize: 60,
+              symbolSize: 50,
               itemStyle: {
                 normal: { 
                     label: {
@@ -639,10 +625,10 @@ export class GmapsComponent {
                 }
             },
               data : [
-                {name: 'markPoint1', value: this.inc11+'%', xAxis: 'Trial', yAxis:30},
-                {name: 'markPoint1', value: this.inc2+'%', xAxis: 'Onboarding', yAxis:45},
-                {name: 'markPoint1', value: this.inc3+'%', xAxis: 'Growth' , yAxis: 60},
-                {name: 'max' , value: this.inc4+'%', xAxis: 'Renewal', yAxis: 73},
+                {name: 'markPoint1', value: this.inc11+'%', xAxis: '1', yAxis:30},
+                {name: 'markPoint1', value: this.inc2+'%', xAxis: '4', yAxis:40},
+                {name: 'markPoint1', value: this.inc3+'%', xAxis: '7' , yAxis: 55},
+                {name: 'max' , value: this.inc4+'%', xAxis: '10', yAxis: 70},
 
               ]
             },
@@ -650,42 +636,10 @@ export class GmapsComponent {
           {
             name: 'Decreasing Value',
             type: 'line',
-            data: [ 35, 25, 60,33],
+            data: [ '-', '-', '-', '-', 40, {value:36, symbol:'arrow',symbolSize:15, symbolRotate:255},'-',50, {value:40, symbol:'arrow',symbolSize:15, symbolRotate:240},
+            '-',
+          ],
             smooth: true,
-            markPoint : {
-              symbol:'circle',
-              symbolSize: 45,
-              itemStyle: {
-                normal: { 
-                    label: {
-                        show: true,
-                        color: '#000', 
-                        fontWeight:'bold'
-                    }
-                },
-                emphasis: {
-                    borderColor: '#1e90ff',
-                    borderWidth: 5,
-                    label: {
-                        show: false
-                    }
-                }
-            },
-              data : [
-                {name: 'markPoint1', value: this.dec1+'%', xAxis: 'Onboarding', yAxis:25},
-                {name: 'markPoint1', value: this.dec2+'%', xAxis: 'Renewal' , yAxis: 33},
-
-              ]
-            },
-          },
-          {
-            name: 'Churned',
-            type: 'line',
-            data: ['-', 25,20,12],
-            smooth: true,
-            symbol:'arrow',
-            symbolSize: 10,
-            symbolRotate:'-85',
             markPoint : {
               symbol:'circle',
               symbolSize: 35,
@@ -706,9 +660,44 @@ export class GmapsComponent {
                 }
             },
               data : [
-                {name: 'markPoint1', value: this.ch1+'%', xAxis: 'Onboarding', yAxis: 15},
-                {name: 'markPoint1', value: this.ch2+'%', xAxis:'Growth', yAxis: 20},
-                {name: 'markPoint1', value: this.ch3+'%', xAxis:'Renewal', yAxis: 12},
+                {name: 'markPoint1', value: this.dec1+'%', xAxis: '6' , yAxis:30},
+                {name: 'markPoint1', value: this.dec2+'%', xAxis: '9' , yAxis: 34},
+
+              ]
+            },
+          },
+          {
+            name: 'Churned',
+            type: 'line',
+            data: ['-', '-','-','-','-',25,{value:22, symbol:'arrow',symbolSize:15, symbolRotate:250}, '-',28,{value:23, symbol:'arrow',symbolSize:15, symbolRotate:250}],
+            //   '-', '-','-',34,{
+            //   value:27, symbol:'arrow',symbolSize:15, symbolRotate:240
+            // }, '-',40, {value:23, symbol:'arrow',symbolSize:15, symbolRotate:220}
+          
+            smooth: true,
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 26,
+              itemStyle: {
+                normal: { 
+                    label: {
+                        show: true,
+                        color: '#000', 
+                        fontWeight:'bold'
+                    }
+                },
+                emphasis: {
+                    borderColor: '#1e90ff',
+                    borderWidth: 5,
+                    label: {
+                        show: false
+                    }
+                }
+            },
+              data : [
+                {name: 'markPoint1', value: this.ch1+'%', xAxis: '4', yAxis: 18},
+                {name: 'markPoint1', value: this.ch2+'%', xAxis:'7', yAxis: 19},
+                {name: 'markPoint1', value: this.ch3+'%', xAxis:'10', yAxis: 20},
               ]
             },
           }

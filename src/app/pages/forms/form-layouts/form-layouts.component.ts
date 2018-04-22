@@ -44,167 +44,205 @@ export class FormLayoutsComponent {
       const echarts: any = config.variables.echarts;
   
       this.charts = {
-        backgroundColor: echarts.bg,
-        color: [colors.success, colors.warning, colors.danger],
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c}',
-        },
-        toolbox: {
-          show : true,
-          orient: 'horizontal',
-          x: 'right',
-          y: 'top',
-          z: 3,
-          color : ['#1e90ff','#22bb22','#4b0082'],
-          backgroundColor: 'rgba(0,0,0,0)',
-          borderColor: '#FFFFF', 
-          feature : {
-              mark : {show: false},
-              dataView : {show: false, readOnly: false, title: 'Data View'},
-              magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
-              restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
-              saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', type: 'png', icon:'image://./assets/images/icon/save.png'}
-          }
-      },
-        legend: {
-          left: 'left',
-          data: ['Increasing Value', 'Decreasing Value', 'Churned'],
-          textStyle: {
-            color: echarts.textColor,
+          backgroundColor: echarts.bg,
+          color: [colors.success, colors.warning, colors.danger],
+          tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c}',
           },
+          toolbox: {
+            show : true,
+            orient: 'horizontal',
+            x: 'right',
+            y: 'top',
+            z: 3,
+            color : ['#1e90ff','#22bb22','#4b0082'],
+            backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: '#FFFFF', 
+            feature : {
+                mark : {show: false},
+                dataView : {show: false, readOnly: false, title: 'Data View'},
+                magicType: {show: false, type: ['bar'], title:{bar:'Bar Chart'}},
+                restore : {show: true, title:'Original',icon:'image://./assets/images/icon/restore.png'},
+                saveAsImage : {show: true, title: 'Save', name:'Churned', type: 'png',icon:'image://./assets/images/icon/save.png'}
+            }
         },
-        xAxis: [
-          {
-            type: 'category',
-            data: ['Trial', 'Onboarding', 'Growth', 'Renewal'],
-            axisTick: {
-              alignWithLabel: true,
-            },
-            axisLine: {
-              lineStyle: {
-                color: 'white',
-              },
-            },
-            axisLabel: {
-              textStyle: {
-                color: echarts.textColor,
-              },
+          legend: {
+            center: 'center',
+            data: ['Increasing Value', 'Decreasing Value', 'Churned'],
+            textStyle: {
+              color: echarts.textColor,
             },
           },
-        ],
-        yAxis: [
-          {
-            type: 'log',
-            axisLine: {
-              lineStyle: {
-                color: echarts.axisLineColor,
+          xAxis: [
+            {
+              type: 'category',
+              data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+              axisTick: {
+                alignWithLabel: true,
+              },
+              axisLine: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
+              },
+              axisLabel: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
               },
             },
-            splitLine: {
-              lineStyle: {
-                color: echarts.splitLineColor,
+            {
+              type: 'category',
+              position: 'top',
+              data: ['Trial','Onboarding', 'Growth','Renewal'],
+              axisTick: {
+                alignWithLabel: true,
+              },
+              axisLine: {
+                lineStyle: {
+                  color: 'white',
+                },
+              },
+              axisLabel: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
               },
             },
-            axisLabel: {
-              textStyle: {
-                color: echarts.textColor,
+            
+          ],
+          yAxis: [
+            {
+              type: 'log',
+              axisLine: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
+              },
+              splitLine: {
+                lineStyle: {
+                  color: echarts.splitLineColor,
+                },
+              },
+              axisLabel: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
               },
             },
+          ],
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
           },
-        ],
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        series: [
-          {
-            name: 'Increasing Value',
-            type: 'line',
-            data: [ {
-              value: 35,
-              symbol: 'circle',
-              symbolSize : 0,
-              symbolRotate : 10,
-              itemStyle: {  
-                  normal: {
-                      color: 'white',
-                      lineStyle: {   
-                        width: 2,
-                        type: 'dash'
+          series: [ 
+            {
+              name: 'Increasing Value',
+              type: 'line',
+              data: ['-', 32,  {value:36, symbol:'arrow',symbolSize:15, symbolRotate:285}, '-', 43,  {value:48, symbol:'arrow',symbolSize:15, symbolRotate:285}
+              , '-', 55,  {value:62, symbol:'arrow',symbolSize:15, symbolRotate:285}],
+              smooth: true,
+              markPoint : {
+                symbol:'circle',
+                symbolSize: 50,
+                itemStyle: {
+                  normal: { 
+                      label: {
+                          show: true,
+                          color: '#000', 
+                          fontWeight:'bold'
                       }
                   },
                   emphasis: {
-                      color: 'orange',
+                      borderColor: '#1e90ff',
+                      borderWidth: 5,
+                      label: {
+                          show: false
+                      }
                   }
-              }
-          },{
-              value: 46,
-              symbol: 'arrow',
-              symbolSize : 0,
-              symbolRotate : 10,
-              itemStyle: {   
-                  normal: {
-                      color: 'white',
-                      lineStyle: { 
-                        width: 2,
-                        type: 'dash'
+              },
+                data : [
+                  {name: 'markPoint1', value: 85+'%', xAxis: '1', yAxis:30},
+                  {name: 'markPoint1', value: 85+'%', xAxis: '4', yAxis:40},
+                  {name: 'markPoint1', value: 65+'%', xAxis: '7' , yAxis: 55},
+                  {name: 'max' , value: 53+'%', xAxis: '10', yAxis: 70},
+  
+                ]
+              },
+            },
+            {
+              name: 'Decreasing Value',
+              type: 'line',
+              data: [ '-', '-', '-', '-', 40, {value:36, symbol:'arrow',symbolSize:15, symbolRotate:255},'-',50, {value:40, symbol:'arrow',symbolSize:15, symbolRotate:240},
+              '-',
+            ],
+              smooth: true,
+              markPoint : {
+                symbol:'circle',
+                symbolSize: 35,
+                itemStyle: {
+                  normal: { 
+                      label: {
+                          show: true,
+                          color: '#000', 
+                          fontWeight:'bold'
                       }
                   },
                   emphasis: {
-                      color: 'orange',
+                      borderColor: '#1e90ff',
+                      borderWidth: 5,
+                      label: {
+                          show: false
+                      }
                   }
-              }
-            },60,73],
-            smooth: true,
-            markPoint : {
-              symbol:'circle',
-              symbolSize: 60,
-              data : [
-                {name: 'markPoint1', value: 85+'%', xAxis: 'Trial', yAxis:35},
-                {name: 'markPoint1', value: 65+'%', xAxis: 'Growth' , yAxis: 60},
-                {name: 'max' , value: 53+'%', xAxis: 'Renewal', yAxis: 73},
-
-              ]
+              },
+                data : [
+                  {name: 'markPoint1', value: 35+'%', xAxis: '6' , yAxis:30},
+                  {name: 'markPoint1', value: 47+'%', xAxis: '9' , yAxis: 34},
+  
+                ]
+              },
             },
-          },
-          {
-            name: 'Decreasing Value',
-            type: 'line',
-            data: [ 35, 25, 60,33],
-            smooth: true,
-            markPoint : {
-              symbol:'circle',
-              symbolSize: 45,
-              data : [
-                {name: 'markPoint1', value: 35+'%', xAxis: 'Onboarding', yAxis:25},
-                {name: 'markPoint1', value: 47+'%', xAxis: 'Renewal' , yAxis: 33},
-
-              ]
-            },
-          },
-          {
-            name: 'Churned',
-            type: 'line',
-            data: ['-', 25,20,12],
-            smooth: true,
-            symbol:'arrow',
-            symbolSize: 10,
-            symbolRotate:'-85',
-            markPoint : {
-              symbol:'circle',
-              symbolSize: 35,
-              data : [
-                {name: 'markPoint1', value: 15+'%', xAxis: 'Onboarding', yAxis: 15},
-                {name: 'markPoint1', value: 20+'%', xAxis:'Growth', yAxis: 20},
-                {name: 'markPoint1', value: 12+'%', xAxis:'Renewal', yAxis: 12},
-              ]
-            },
-          }
-        ],
-      };
+            {
+              name: 'Churned',
+              type: 'line',
+              data: ['-', '-','-','-','-',25,{value:22, symbol:'arrow',symbolSize:15, symbolRotate:250}, '-',28,{value:23, symbol:'arrow',symbolSize:15, symbolRotate:250}],
+              //   '-', '-','-',34,{
+              //   value:27, symbol:'arrow',symbolSize:15, symbolRotate:240
+              // }, '-',40, {value:23, symbol:'arrow',symbolSize:15, symbolRotate:220}
+            
+              smooth: true,
+              markPoint : {
+                symbol:'circle',
+                symbolSize: 26,
+                itemStyle: {
+                  normal: { 
+                      label: {
+                          show: true,
+                          color: '#000', 
+                          fontWeight:'bold'
+                      }
+                  },
+                  emphasis: {
+                      borderColor: '#1e90ff',
+                      borderWidth: 5,
+                      label: {
+                          show: false
+                      }
+                  }
+              },
+                data : [
+                  {name: 'markPoint1', value: 15+'%', xAxis: '4', yAxis: 18},
+                  {name: 'markPoint1', value: 20+'%', xAxis:'7', yAxis: 19},
+                  {name: 'markPoint1', value: 12+'%', xAxis:'10', yAxis: 20},
+                ]
+              },
+            }
+          ],
+        };
     });
   }
 
