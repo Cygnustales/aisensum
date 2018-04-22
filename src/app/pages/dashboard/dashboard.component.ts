@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbThemeService } from '@nebular/theme';
+import { color } from 'd3-color';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -107,6 +108,12 @@ export class DashboardComponent {
         xAxis: [
           {
             type: 'category',
+            splitArea:{
+              show:true,
+              areaStyle:{
+               color:['rgba(255,0,0,0.0)','rgba(255,0,0,0.0)','rgba(255,0,0,0.0)','rgba(0,0,0,.2)','rgba(0,0,0,.2)','rgba(0,0,0,.2)']
+               }
+             },
             axisTick: {
               alignWithLabel: true,
             },
@@ -213,7 +220,21 @@ export class DashboardComponent {
             name: 'Net Churn',
             type: 'line',
             smooth: true,
-            data: [11000, 7000, 2000, 6500, 3000, 2500]
+            showAllSymbol: true,
+            symbolSize: 10,
+            data: [24000, 18000, 12000, 7000, 9000, 11500],
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 35,
+              data : [
+                {name: 'markPoint1', value: 48+'%', xAxis: 'Jan', yAxis: 24000},
+                {name: 'markPoint1', value: 24+'%', xAxis:'Feb', yAxis: 18000},
+                {name: 'markPoint1', value: -10+'%', xAxis:'Mar', yAxis: 12000},
+                {name: 'markPoint1', value: -36+'%', xAxis:'Apr', yAxis: 7000},
+                {name: 'markPoint1', value: -18+'%', xAxis:'May', yAxis: 9000},
+                {name: 'markPoint1', value: 14+'%', xAxis:'Jun', yAxis: 11500},
+              ]
+            },
           },
         ],
       };
@@ -228,7 +249,7 @@ lost(){
 
     this.losted = {
       backgroundColor: echarts.bg,
-      color: [colors.danger, '#fff'],
+      color: [colors.warning, colors.primary ],
       tooltip: {
         trigger: 'item',
         formatter: '{a} <br/>{b} : {c}',
@@ -247,26 +268,33 @@ lost(){
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
             restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
-            saveAsImage : {show: true, title: 'Save', name:'Potential Lost due to churn (in Million)', icon:'image://./assets/images/icon/save.png'}
+            saveAsImage : {show: true, title: 'Save', name:'Potential Loss due to churn (in Million)', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
         left: 'left',
-        data: ['Potential Lost due to churn (in Million)', 'Prediction'],
+        data: ['Potential Loss due to churn (in Million)', '2 Year Average'],
         textStyle: {
           color: echarts.textColor,
         },
       },
       xAxis: [
         {
+          
           type: 'category',
+          splitArea:{
+            show:true,
+            areaStyle:{
+             color:['rgba(255,0,0,0.0)','rgba(255,0,0,0.0)','rgba(255,0,0,0.0)','rgba(0,0,0,.2)','rgba(0,0,0,.2)','rgba(0,0,0,.2)']
+             }
+           },
           data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
           axisTick: {
             alignWithLabel: true,
           },
           axisLine: {
             lineStyle: {
-              color: colors.danger,
+              color: colors.primary,
             },
           },
           axisLabel: {
@@ -338,14 +366,38 @@ lost(){
       },
       series: [
         {
-          name: 'Potential Lost due to churn (in Million)',
+        
+          name: '2 Year Average',
           type: 'line',
+          smooth:true,
           data: [450,450,450,450,450,450],
+          markPoint : {
+            symbol:'circle',
+            symbolSize: 25,
+            data : [
+              {name: 'markPoint1', value: 450, xAxis: 'Jun', yAxis: 450},
+            ]
+          },
         },
         {
-          name: 'Prediction',
+          showAllSymbol: true,
+          symbolSize: 10,
+          smooth: true,
+          name: 'Potential Loss due to churn (in Million)',
           type: 'line',
           data: [300,400,450,500,600,550],
+          markPoint : {
+            symbol:'circle',
+            symbolSize: 35,
+            data : [
+              {name: 'markPoint1', value: 300, xAxis: 'Jan', yAxis: 300},
+              {name: 'markPoint1', value: 400, xAxis:'Feb', yAxis: 400},
+              {name: 'markPoint1', value: 450, xAxis:'Mar', yAxis: 450},
+              {name: 'markPoint1', value: 500, xAxis:'Apr', yAxis: 500},
+              {name: 'markPoint1', value: 600, xAxis:'May', yAxis: 600},
+              {name: 'markPoint1', value: 550, xAxis:'Jun', yAxis: 550},
+            ]
+          },
         }
       ],
     };

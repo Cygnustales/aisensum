@@ -83,7 +83,44 @@ export class GmapsComponent {
         value:1
       }
   
-        ]
+        ];
+  btl:any = 30;
+  btl1:any = 0;
+  btl2:any = 0;
+  btl3:any = 0;
+  btl4:any = 0;
+  pe1:any = 0;
+  pe2:any = 0;
+  pe3:any = 0;
+  pe4:any = 0;
+  dg1:any = 0;
+  dg2:any = 0;
+  dg3:any = 0;
+  dg4:any = 0;
+  tl1:any = 0;
+  tl2:any = 0;
+  tl3:any = 0;
+  tl4:any = 0;
+  vc1:any = 0;
+  vc2:any = 0;
+  vc3:any = 0;
+  vc4:any = 0;
+  cs:any = 0;
+  cs1:any = 0;
+  cs2:any = 0;
+  cs3:any = 0;
+  cs4:any = 0;
+  sum:any = 0;
+
+  inc11:any = 0;
+  inc2:any = 0;
+  inc3:any = 0;
+  inc4:any = 0;
+  ch1:any = 0;
+  ch2:any = 0;
+  ch3:any = 0;
+  dec1:any = 0;
+  dec2:any = 0;
 
   constructor(private service: SmartTableService,private theme: NbThemeService, private route: ActivatedRoute, private routes:Router) {
     const data = this.service.getData();
@@ -114,7 +151,55 @@ export class GmapsComponent {
       this.peta = './assets/images/maps/jbr.png';
     }
     //this.segment();
+    this.btlVal();
   }
+
+
+  btlVal(){
+    this.cs = 100 - this.btl;
+    this.btl1 = Math.floor(this.btl * 0.2)
+    this.btl2 = Math.floor(this.btl * 0.3)
+    this.btl3 = Math.floor(this.btl * 0.2)
+    this.btl4 = Math.floor(this.btl * 0.4)
+    this.pe1 = Math.floor(this.btl1 * 0.3)
+    this.pe2 = Math.floor(this.btl2 * 0.3)
+    this.pe3 = Math.floor(this.btl3 * 0.3)
+    this.pe4 = Math.floor(this.btl4 * 0.3)
+    this.dg1 = Math.floor(this.btl1 * 0.3)
+    this.dg2 = Math.floor(this.btl2 * 0.3)
+    this.dg3 = Math.floor(this.btl3 * 0.3)
+    this.dg4 = Math.floor(this.btl4 * 0.3)
+    this.tl1 = Math.floor(this.btl1 * 0.1)
+    this.tl2 = Math.floor(this.btl2 * 0.1)
+    this.tl3 = Math.floor(this.btl3 * 0.1)
+    this.tl4 = Math.floor(this.btl4 * 0.1)
+    this.vc1 = Math.floor(this.btl1 * 0.3)
+    this.vc2 = Math.floor(this.btl2 * 0.3)
+    this.vc3 = Math.floor(this.btl3 * 0.3)
+    this.vc4 = Math.floor(this.btl4 * 0.3)
+    this.cs1 = Math.floor(this.cs * 0.2)
+    this.cs2 = Math.floor(this.cs * 0.3)
+    this.cs3 = Math.floor(this.cs * 0.2)
+    this.cs4 = Math.floor(this.cs * 0.4)
+    this.sum = this.btl1 + this.btl2 + this.btl3 + this.btl4 + this.pe1 + this.pe2+ this.pe3+ this.pe4 +
+      this.dg1 + this.dg2 + this.dg3 + this.dg4 + this.tl1 + this.tl2 + this.tl3 + this.tl4 + this.vc1 + 
+      this.vc2 + this.vc3 + this.vc4 + this.cs1 + this.cs2 + this.cs3 + this.cs4;
+    //console.log(this.sum)
+    var inc = 85;
+    var inc1 = Math.round(inc * (this.sum - 0.9)/100);
+    this.inc11 = Math.round(inc1/5.5);
+    this.inc2 = Math.round(this.inc11 - (this.inc11/this.sum)*this.global)
+    this.inc3 = Math.round(this.inc2 - (this.inc11/this.sum)*this.global)
+    this.inc4 = Math.round(this.inc3 - (this.inc3/this.sum)*this.global)
+    this.ch1 = Math.round(this.inc11 - this.inc2)
+    this.ch2 = Math.round(this.inc2 - this.inc3)
+    this.ch3 = Math.round(this.inc3 - this.inc4)
+    this.dec1 = Math.round(this.ch2 * 1.8)
+    this.dec2 = Math.round(this.ch3 * 1.8)
+    this.lineChart();
+  }
+  
+  
 
   goAdd(){
     this.addMode = true;
@@ -207,6 +292,40 @@ export class GmapsComponent {
     this.buildChart();
   }
 
+  sim(){
+    if(this.lever.length !== 0){
+      const optemp = [80, 70, 85, 55];
+      const lev = this.global - (this.lever.length *5);
+      const multi = 1.5 - (lev/100);
+      const hr = multi * 100;
+      for (let i = 0; i < this.churns.length; i++) {
+        if( i === 4 ){
+          var fr = Math.floor(this.churns[i] * (0.1 * hr));
+          var g =  this.churns[i] - Math.floor(fr/100);
+          optemp.push(g);
+        }
+        if( i === 5 || i === 6 || i === 7 ){
+          var fr = Math.floor(this.churns[i] * (0.2 * hr));
+          var g =  this.churns[i] - Math.floor(fr/100);
+          optemp.push(g);
+        }
+        if( i === 8 || i === 10 ){
+          var fr = Math.floor(this.churns[i] * (0.3 * hr));
+          var g =  this.churns[i] - Math.floor(fr/100);
+          optemp.push(g);
+        }
+        if( i === 9 || i === 11 ){
+          var fr = Math.floor(this.churns[i] * (0.4 * hr));
+          var g =  this.churns[i] - Math.floor(fr/100);
+          optemp.push(g);
+        }
+        
+      }
+      this.optimized = optemp;
+      this.buildChart();
+    }
+  }
+
   ngAfterViewInit() {
    this.buildChart();
    this.lineChart();
@@ -220,7 +339,7 @@ export class GmapsComponent {
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: [colors.danger, colors.primary],
+        color: [colors.warning, colors.primary],
         tooltip: {
           trigger: 'none',
           axisPointer: {
@@ -304,7 +423,7 @@ export class GmapsComponent {
             axisLine: {
               onZero: false,
               lineStyle: {
-                color: colors.danger,
+                color: colors.warning,
               },
             },
             axisLabel: {
@@ -385,7 +504,7 @@ export class GmapsComponent {
 
       this.line = {
         backgroundColor: echarts.bg,
-        color: [colors.danger, colors.success, colors.warning],
+        color: [colors.success, colors.warning, colors.danger],
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}',
@@ -409,7 +528,7 @@ export class GmapsComponent {
       },
         legend: {
           center: 'center',
-          data: ['Churned', 'Increasing', 'Decreasing'],
+          data: ['Increasing Value', 'Decreasing Value', 'Churned'],
           textStyle: {
             color: echarts.textColor,
           },
@@ -461,20 +580,89 @@ export class GmapsComponent {
         },
         series: [
           {
+            name: 'Increasing Value',
+            type: 'line',
+            data: [ {
+              value: 30,
+              symbol: 'circle',
+              symbolSize : 0,
+              symbolRotate : 10,
+              itemStyle: {  
+                  normal: {
+                      color: 'white',
+                      lineStyle: {   
+                        width: 2,
+                        type: 'dash'
+                      }
+                  },
+                  emphasis: {
+                      color: 'orange',
+                  }
+              }
+          },{
+              value: 45,
+              symbol: 'arrow',
+              symbolSize : 0,
+              symbolRotate : 10,
+              itemStyle: {   
+                  normal: {
+                      color: 'white',
+                      lineStyle: { 
+                        width: 2,
+                        type: 'dash'
+                      }
+                  },
+                  emphasis: {
+                      color: 'orange',
+                  }
+              }
+            },60,73],
+            smooth: true,
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 60,
+              data : [
+                {name: 'markPoint1', value: this.inc11+'%', xAxis: 'Trial', yAxis:30},
+                {name: 'markPoint1', value: this.inc2+'%', xAxis: 'Onboarding', yAxis:45},
+                {name: 'markPoint1', value: this.inc3+'%', xAxis: 'Growth' , yAxis: 60},
+                {name: 'max' , value: this.inc4+'%', xAxis: 'Renewal', yAxis: 73},
+
+              ]
+            },
+          },
+          {
+            name: 'Decreasing Value',
+            type: 'line',
+            data: [ 35, 25, 60,33],
+            smooth: true,
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 45,
+              data : [
+                {name: 'markPoint1', value: this.dec1+'%', xAxis: 'Onboarding', yAxis:25},
+                {name: 'markPoint1', value: this.dec2+'%', xAxis: 'Renewal' , yAxis: 33},
+
+              ]
+            },
+          },
+          {
             name: 'Churned',
             type: 'line',
-            data: [85, 15, 20, 32],
-          },
-          {
-            name: 'Increasing',
-            type: 'line',
-            data: [85, 85, 65, 53],
-          },
-          {
-            name: 'Decreasing',
-            type: 'line',
-            data: [85, 85, 35, 47],
-          },
+            data: ['-', 25,20,12],
+            smooth: true,
+            symbol:'arrow',
+            symbolSize: 10,
+            symbolRotate:'-85',
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 35,
+              data : [
+                {name: 'markPoint1', value: this.ch1+'%', xAxis: 'Onboarding', yAxis: 15},
+                {name: 'markPoint1', value: this.ch2+'%', xAxis:'Growth', yAxis: 20},
+                {name: 'markPoint1', value: this.ch3+'%', xAxis:'Renewal', yAxis: 12},
+              ]
+            },
+          }
         ],
       };
     });

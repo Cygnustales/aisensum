@@ -77,7 +77,7 @@ export class FormLayoutsComponent {
         xAxis: [
           {
             type: 'category',
-            data: ['Trial', 'Onboarding', 'Growth', 'Renewall'],
+            data: ['Trial', 'Onboarding', 'Growth', 'Renewal'],
             axisTick: {
               alignWithLabel: true,
             },
@@ -123,17 +123,85 @@ export class FormLayoutsComponent {
           {
             name: 'Increasing Value',
             type: 'line',
-            data: [85,85,65,53],
+            data: [ {
+              value: 35,
+              symbol: 'circle',
+              symbolSize : 0,
+              symbolRotate : 10,
+              itemStyle: {  
+                  normal: {
+                      color: 'white',
+                      lineStyle: {   
+                        width: 2,
+                        type: 'dash'
+                      }
+                  },
+                  emphasis: {
+                      color: 'orange',
+                  }
+              }
+          },{
+              value: 46,
+              symbol: 'arrow',
+              symbolSize : 0,
+              symbolRotate : 10,
+              itemStyle: {   
+                  normal: {
+                      color: 'white',
+                      lineStyle: { 
+                        width: 2,
+                        type: 'dash'
+                      }
+                  },
+                  emphasis: {
+                      color: 'orange',
+                  }
+              }
+            },60,73],
+            smooth: true,
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 60,
+              data : [
+                {name: 'markPoint1', value: 85+'%', xAxis: 'Trial', yAxis:35},
+                {name: 'markPoint1', value: 65+'%', xAxis: 'Growth' , yAxis: 60},
+                {name: 'max' , value: 53+'%', xAxis: 'Renewal', yAxis: 73},
+
+              ]
+            },
           },
           {
             name: 'Decreasing Value',
             type: 'line',
-            data: [85,85,35,47],
+            data: [ 35, 25, 60,33],
+            smooth: true,
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 45,
+              data : [
+                {name: 'markPoint1', value: 35+'%', xAxis: 'Onboarding', yAxis:25},
+                {name: 'markPoint1', value: 47+'%', xAxis: 'Renewal' , yAxis: 33},
+
+              ]
+            },
           },
           {
             name: 'Churned',
             type: 'line',
-            data: [65,15,20,12],
+            data: ['-', 25,20,12],
+            smooth: true,
+            symbol:'arrow',
+            symbolSize: 10,
+            symbolRotate:'-85',
+            markPoint : {
+              symbol:'circle',
+              symbolSize: 35,
+              data : [
+                {name: 'markPoint1', value: 15+'%', xAxis: 'Onboarding', yAxis: 15},
+                {name: 'markPoint1', value: 20+'%', xAxis:'Growth', yAxis: 20},
+                {name: 'markPoint1', value: 12+'%', xAxis:'Renewal', yAxis: 12},
+              ]
+            },
           }
         ],
       };
@@ -185,7 +253,7 @@ export class FormLayoutsComponent {
             x : 10,
             y : 45,
             itemGap:12,
-            data:['Trial','Onboarding','Growth','Renewall']
+            data:['Trial','Onboarding','Growth','Renewal']
         },
         toolbox: {
             show : true,
@@ -260,7 +328,7 @@ export class FormLayoutsComponent {
             data:[
                 {
                     value:30, 
-                    name:'Renewall'
+                    name:'Renewal'
                 },
                 {
                     value:70,
