@@ -157,37 +157,37 @@ export class GmapsComponent {
 
   btlVal(){
     this.cs = 100 - this.btl;
-    this.btl1 = Math.floor(this.btl * 0.2)
-    this.btl2 = Math.floor(this.btl * 0.3)
-    this.btl3 = Math.floor(this.btl * 0.2)
-    this.btl4 = Math.floor(this.btl * 0.4)
-    this.pe1 = Math.floor(this.btl1 * 0.3)
-    this.pe2 = Math.floor(this.btl2 * 0.3)
-    this.pe3 = Math.floor(this.btl3 * 0.3)
-    this.pe4 = Math.floor(this.btl4 * 0.3)
-    this.dg1 = Math.floor(this.btl1 * 0.3)
-    this.dg2 = Math.floor(this.btl2 * 0.3)
-    this.dg3 = Math.floor(this.btl3 * 0.3)
-    this.dg4 = Math.floor(this.btl4 * 0.3)
-    this.tl1 = Math.floor(this.btl1 * 0.1)
-    this.tl2 = Math.floor(this.btl2 * 0.1)
-    this.tl3 = Math.floor(this.btl3 * 0.1)
-    this.tl4 = Math.floor(this.btl4 * 0.1)
-    this.vc1 = Math.floor(this.btl1 * 0.3)
-    this.vc2 = Math.floor(this.btl2 * 0.3)
-    this.vc3 = Math.floor(this.btl3 * 0.3)
-    this.vc4 = Math.floor(this.btl4 * 0.3)
-    this.cs1 = Math.floor(this.cs * 0.2)
-    this.cs2 = Math.floor(this.cs * 0.3)
-    this.cs3 = Math.floor(this.cs * 0.2)
-    this.cs4 = Math.floor(this.cs * 0.4)
+    this.btl1 = Math.round(this.btl * 0.2)
+    this.btl2 = Math.round(this.btl * 0.3)
+    this.btl3 = Math.round(this.btl * 0.2)
+    this.btl4 = Math.round(this.btl * 0.4)
+    this.pe1 = Math.round(this.btl1 * 0.3)
+    this.pe2 = Math.round(this.btl2 * 0.3)
+    this.pe3 = Math.round(this.btl3 * 0.3)
+    this.pe4 = Math.round(this.btl4 * 0.3)
+    this.dg1 = Math.round(this.btl1 * 0.3)
+    this.dg2 = Math.round(this.btl2 * 0.3)
+    this.dg3 = Math.round(this.btl3 * 0.3)
+    this.dg4 = Math.round(this.btl4 * 0.3)
+    this.tl1 = Math.round(this.btl1 * 0.1)
+    this.tl2 = Math.round(this.btl2 * 0.1)
+    this.tl3 = Math.round(this.btl3 * 0.1)
+    this.tl4 = Math.round(this.btl4 * 0.1)
+    this.vc1 = Math.round(this.btl1 * 0.3)
+    this.vc2 = Math.round(this.btl2 * 0.3)
+    this.vc3 = Math.round(this.btl3 * 0.3)
+    this.vc4 = Math.round(this.btl4 * 0.3)
+    this.cs1 = Math.round(this.cs * 0.2)
+    this.cs2 = Math.round(this.cs * 0.3)
+    this.cs3 = Math.round(this.cs * 0.2)
+    this.cs4 = Math.round(this.cs * 0.4)
     this.sum = this.btl1 + this.btl2 + this.btl3 + this.btl4 + this.pe1 + this.pe2+ this.pe3+ this.pe4 +
       this.dg1 + this.dg2 + this.dg3 + this.dg4 + this.tl1 + this.tl2 + this.tl3 + this.tl4 + this.vc1 + 
       this.vc2 + this.vc3 + this.vc4 + this.cs1 + this.cs2 + this.cs3 + this.cs4;
-    //console.log(this.sum)
+    console.log(this.sum)
     var inc = 85;
     var inc1 = Math.round(inc * (this.sum - 0.9)/100);
-    this.inc11 = Math.round(inc1/5.5);
+    this.inc11 = Math.round(inc1/5.2);
     this.inc2 = Math.round(this.inc11 - (this.inc11/this.sum)*this.global)
     this.inc3 = Math.round(this.inc2 - (this.inc11/this.sum)*this.global)
     this.inc4 = Math.round(this.inc3 - (this.inc3/this.sum)*this.global)
@@ -197,6 +197,7 @@ export class GmapsComponent {
     this.dec1 = Math.round(this.ch2 * 1.8)
     this.dec2 = Math.round(this.ch3 * 1.8)
     this.lineChart();
+    console.log(this.ch2)
   }
   
   
@@ -242,13 +243,13 @@ export class GmapsComponent {
     this.selectedArea = 0;
     for (let i = 0; i < this.segmentArray.length; i++) {
       if(i > 0){
-       var val = Math.floor(this.global * ( this.segmentArray[i].value / 3));
+       var val = Math.round(this.global * ( this.segmentArray[i].value / 3));
        this.segmentArray[i].value = val
       } 
     }
     for (let a = 0; a < this.areaArray.length; a++) {
       if(a > 0){
-        var vals = Math.floor(this.global * ( this.areaArray[a].value / (this.areaArray[a].value / 1)));
+        var vals = Math.round(this.global * ( this.areaArray[a].value / (this.areaArray[a].value / 1)));
         this.areaArray[a].value = vals/5
        } 
       
@@ -267,23 +268,23 @@ export class GmapsComponent {
     const hr = multi * 100;
     for (let i = 0; i < this.churns.length; i++) {
       if( i === 4 ){
-        var fr = Math.floor(this.churns[i] * (0.1 * hr));
-        var g =  this.churns[i] - Math.floor(fr/100);
+        var fr = Math.round(this.churns[i] * (0.1 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
         optemp.push(g);
       }
       if( i === 5 || i === 6 || i === 7 ){
-        var fr = Math.floor(this.churns[i] * (0.2 * hr));
-        var g =  this.churns[i] - Math.floor(fr/100);
+        var fr = Math.round(this.churns[i] * (0.2 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
         optemp.push(g);
       }
       if( i === 8 || i === 10 ){
-        var fr = Math.floor(this.churns[i] * (0.3 * hr));
-        var g =  this.churns[i] - Math.floor(fr/100);
+        var fr = Math.round(this.churns[i] * (0.3 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
         optemp.push(g);
       }
       if( i === 9 || i === 11 ){
-        var fr = Math.floor(this.churns[i] * (0.4 * hr));
-        var g =  this.churns[i] - Math.floor(fr/100);
+        var fr = Math.round(this.churns[i] * (0.4 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
         optemp.push(g);
       }
       
@@ -300,23 +301,23 @@ export class GmapsComponent {
       const hr = multi * 100;
       for (let i = 0; i < this.churns.length; i++) {
         if( i === 4 ){
-          var fr = Math.floor(this.churns[i] * (0.1 * hr));
-          var g =  this.churns[i] - Math.floor(fr/100);
+          var fr = Math.round(this.churns[i] * (0.1 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
           optemp.push(g);
         }
         if( i === 5 || i === 6 || i === 7 ){
-          var fr = Math.floor(this.churns[i] * (0.2 * hr));
-          var g =  this.churns[i] - Math.floor(fr/100);
+          var fr = Math.round(this.churns[i] * (0.2 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
           optemp.push(g);
         }
         if( i === 8 || i === 10 ){
-          var fr = Math.floor(this.churns[i] * (0.3 * hr));
-          var g =  this.churns[i] - Math.floor(fr/100);
+          var fr = Math.round(this.churns[i] * (0.3 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
           optemp.push(g);
         }
         if( i === 9 || i === 11 ){
-          var fr = Math.floor(this.churns[i] * (0.4 * hr));
-          var g =  this.churns[i] - Math.floor(fr/100);
+          var fr = Math.round(this.churns[i] * (0.4 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
           optemp.push(g);
         }
         
@@ -621,6 +622,22 @@ export class GmapsComponent {
             markPoint : {
               symbol:'circle',
               symbolSize: 60,
+              itemStyle: {
+                normal: { 
+                    label: {
+                        show: true,
+                        color: '#000', 
+                        fontWeight:'bold'
+                    }
+                },
+                emphasis: {
+                    borderColor: '#1e90ff',
+                    borderWidth: 5,
+                    label: {
+                        show: false
+                    }
+                }
+            },
               data : [
                 {name: 'markPoint1', value: this.inc11+'%', xAxis: 'Trial', yAxis:30},
                 {name: 'markPoint1', value: this.inc2+'%', xAxis: 'Onboarding', yAxis:45},
@@ -638,6 +655,22 @@ export class GmapsComponent {
             markPoint : {
               symbol:'circle',
               symbolSize: 45,
+              itemStyle: {
+                normal: { 
+                    label: {
+                        show: true,
+                        color: '#000', 
+                        fontWeight:'bold'
+                    }
+                },
+                emphasis: {
+                    borderColor: '#1e90ff',
+                    borderWidth: 5,
+                    label: {
+                        show: false
+                    }
+                }
+            },
               data : [
                 {name: 'markPoint1', value: this.dec1+'%', xAxis: 'Onboarding', yAxis:25},
                 {name: 'markPoint1', value: this.dec2+'%', xAxis: 'Renewal' , yAxis: 33},
@@ -656,6 +689,22 @@ export class GmapsComponent {
             markPoint : {
               symbol:'circle',
               symbolSize: 35,
+              itemStyle: {
+                normal: { 
+                    label: {
+                        show: true,
+                        color: '#000', 
+                        fontWeight:'bold'
+                    }
+                },
+                emphasis: {
+                    borderColor: '#1e90ff',
+                    borderWidth: 5,
+                    label: {
+                        show: false
+                    }
+                }
+            },
               data : [
                 {name: 'markPoint1', value: this.ch1+'%', xAxis: 'Onboarding', yAxis: 15},
                 {name: 'markPoint1', value: this.ch2+'%', xAxis:'Growth', yAxis: 20},

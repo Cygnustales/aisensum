@@ -27,24 +27,70 @@
 .combined3{
   float: left;
   width:75%;
-  margin-top:5px;
   padding: 10px;
 }
-th{
-  text-align: center;
-  padding:10px;
-  background-color: rgba($color: white, $alpha: .2);
+// th{
+//   text-align: center;
+//   padding:10px;
+//   background-color: rgba($color: white, $alpha: .2);
   
-}
-td{
-  text-align: center;
-  height: 32px;
-  border: 1px solid rgba($color: white, $alpha: .5);
-}
-table{
-  border: 1px solid rgba($color: white, $alpha: .5);
-  border-radius: 10px;
-}
+// }
+// td{
+//   text-align: center;
+//   height: 32px;
+//   border: 1px solid rgba($color: white, $alpha: .5);
+// }
+// table{
+//   border: 1px solid rgba($color: white, $alpha: .5);
+//   border-radius: 10px;
+// }
 .peta{
   width: 100px;
+}
+.ts-table {
+  border: solid 1px #DDEEEE;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+.ts-table thead th {
+  background-color: #DDEFEF;
+  border: solid 1px #DDEEEE;
+  color: #336B6B;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+}
+.ts-table tbody td {
+  border: solid 1px #DDEEEE;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+}
+.ts-table-rounded {
+  border: none;
+}
+.ts-table-rounded thead th {
+  background-color: darkcyan;
+  border: none;
+  text-shadow: 1px 1px 1px #ccc;
+  color: #fff;
+}
+.ts-table-rounded thead th:first-child {
+  border-radius: 10px 0 0 0;
+}
+.ts-table-rounded thead th:last-child {
+  border-radius: 0 10px 0 0;
+}
+.ts-table-rounded tbody td {
+  border: none;
+  border-top: solid 1px darkcyan;
+  background-color: lightcyan;
+}
+.ts-table-rounded tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+.ts-table-rounded tbody tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
 }
