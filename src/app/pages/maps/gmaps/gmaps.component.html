@@ -29,7 +29,27 @@
             <div class="input-group" style="padding:10px;">
                     <div class="dropdown input-group-btn" ngbDropdown>
                         <select class="form-control"  [(ngModel)]="segment" (ngModelChange)="getSegment()">
-                            <option *ngFor="let segment of segmentArray" [value]="segment.value">{{segment.name}}</option>
+                            <!-- <option *ngFor="let segment of segmentArray" [value]="segment.value">{{segment.name}}</option> -->
+                            <option value="0">Segment</option>
+                            <optgroup label="Life Stages">
+                                    <option value="10">Milenials</option>
+                                    <option value="40">Young Adult</option>
+                                    <option value="20">Family</option>
+                                    <option value="20">Traditional</option>
+                                  </optgroup>
+                                  <optgroup label="Customer Value">
+                                    <option value="25">Hi Net</option>
+                                    <option value="30">Deal Hunters</option>
+                                    <option value="20">Occasional</option>
+                                    <option value="25">Opportunity</option>
+                                  </optgroup>
+                                  <optgroup label="Banking Product">
+                                    <option value="40">Saving</option>
+                                    <option value="25">Credit Card</option>
+                                    <option value="20">Loan</option>
+                                    <option value="10">Insurance</option>
+                                    <option value="5">Investment</option>
+                                  </optgroup>
                         </select>
                     </div>
                     <input type="text" class="form-control" [(ngModel)]="selectedSegment">
@@ -42,7 +62,14 @@
                 <div class="input-group" style="padding:10px;">
                         <div class="dropdown input-group-btn" ngbDropdown>
                             <select class="form-control"  [(ngModel)]="area" (ngModelChange)="getArea()">
-                                <option *ngFor="let area of areaArray" [value]="area.value">{{area.name}}</option>
+                                <!--<option *ngFor="let area of areaArray" [value]="area.value">{{area.name}}</option>-->
+                                    <option value="0">Area</option>
+                                    <option value="1">Kalideres</option>
+                                    <option value="4">Kembangan</option>
+                                    <option value="3">Grogol</option>
+                                    <option value="1">Kebon Jeruk</option>
+                                    <option value="2">Cengkareng</option>
+                                    <option value="5">Jakarta Barat</option>
                             </select>
                         </div>
                         <input type="text" class="form-control" [(ngModel)]="selectedArea">
@@ -86,12 +113,12 @@
                             </button>
                         </div>
                         <div *ngFor="let lv of lever; let i = index" style="margin:10px;">
-                                <button type="button" (click)="goRemove(i)" class="btn btn-warning btn-with-icon btn-sm" style="float:left;margin:10px;">
+                                <button type="button" (click)="goRemove(i)" class="btn btn-warning btn-with-icon btn-tn" style="float:left;margin:10px;">
                                         <i class="ion ion-ios-minus-outline"></i>
                                         <span>{{ lv }}</span>
                                     </button>
                         </div>
-                        <div align="right" style="padding:10px;" *ngIf="lever != 0"><button type="button" (click)="sim()" class="btn btn-primary">Simulate Churn Rate</button></div>
+                        
                     <div class="sec" *ngIf="addMode">
                     <div align="center">
                         <div class="dropdown col-11" style="display:inline-block; margin:10px;" ngbDropdown>
@@ -125,12 +152,13 @@
                             <div class="form-group col-3" style="display:inline-block;">
                                     <label>Region</label>
                                     <select class="form-control">
-                                        <option>Sumatra</option>
-                                        <option>Java</option>
-                                        <option>Kalimantan</option>
-                                        <option>Sulawesi</option>
-                                        <option>Bali & Nusa</option>
-                                        <option>East Indonesia</option>
+                                            <option value="0">Area</option>
+                                            <option value="1">Kalideres</option>
+                                            <option value="4">Kembangan</option>
+                                            <option value="3">Grogol</option>
+                                            <option value="1">Kebon Jeruk</option>
+                                            <option value="2">Cengkareng</option>
+                                            <option value="5">Jakarta Barat</option>
                                     </select>
                                 </div>
                             </div>
@@ -138,11 +166,28 @@
                                     <div class="form-group col-3" style="display:inline-block;">
                                         <label>Customer Segment</label>
                                         <select class="form-control">
-                                            <option>Millenials</option>
-                                            <option>Young Adult</option>
-                                            <option>Family</option>
-                                            <option>Traditional</option>
-                                        </select>
+                                                <!-- <option *ngFor="let segment of segmentArray" [value]="segment.value">{{segment.name}}</option> -->
+                                                <option value="0">Segment</option>
+                                                <optgroup label="Life Stages">
+                                                        <option value="10">Milenials</option>
+                                                        <option value="40">Young Adult</option>
+                                                        <option value="20">Family</option>
+                                                        <option value="20">Traditional</option>
+                                                      </optgroup>
+                                                      <optgroup label="Customer Value">
+                                                        <option value="25">Hi Net</option>
+                                                        <option value="30">Deal Hunters</option>
+                                                        <option value="20">Occasional</option>
+                                                        <option value="25">Opportunity</option>
+                                                      </optgroup>
+                                                      <optgroup label="Banking Product">
+                                                        <option value="40">Saving</option>
+                                                        <option value="25">Credit Card</option>
+                                                        <option value="20">Loan</option>
+                                                        <option value="10">Insurance</option>
+                                                        <option value="5">Investment</option>
+                                                      </optgroup>
+                                            </select>
                                     </div>
                                     <!--<div class="form-group col-3" style="display:inline-block;">
                                             <label>Coverage</label>

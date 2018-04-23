@@ -34,8 +34,8 @@ export class GmapsComponent {
   optimized = [80, 70, 85, 55, 52, 36, 42, 51, 45, 36, 50, 40];
   churns = [80, 70, 85, 55, 61, 50, 59, 71, 78, 81, 87, 92]
   global: number = 10;
-  segment: any = 0;
-  selectedSegment: any = 0;
+  segment: any = 10;
+  selectedSegment: any = 10;
   segmentArray: any = [
     { 
       name: 'Segment',
@@ -59,27 +59,36 @@ export class GmapsComponent {
     }
 
       ]
-    area:any=0;
-    selectedArea:any=0;
+    area:any=1;
+    selectedArea:any=1;
     areaArray:any = [
       { 
         name: 'Area',
         value:0
       },
       { 
-        name: 'PIK',
+        name: 'Kalideres',
         value:1
       },
       { 
-        name: 'Mangga Dua',
+        name: 'Kembangan',
         value:4
       },
       { 
-        name: 'Mangga Besar',
+        name: 'Grogol',
         value:3
       },
       { 
-        name: 'Glodok',
+        name: 'Kebon Jeruk',
+        value:1
+      }
+      ,
+      { 
+        name: 'Cengkareng',
+        value:5
+      },
+      { 
+        name: 'Jakarta Barat',
         value:1
       }
   
@@ -244,7 +253,7 @@ export class GmapsComponent {
     for (let i = 0; i < this.segmentArray.length; i++) {
       if(i > 0){
        var val = Math.round(this.global * ( this.segmentArray[i].value / 3));
-       this.segmentArray[i].value = val
+       //this.segmentArray[i].value = val
       } 
     }
     for (let a = 0; a < this.areaArray.length; a++) {
@@ -260,6 +269,7 @@ export class GmapsComponent {
     this.selectedSegment = this.segment;
   }
   getArea(){
+    console.log(this.area)
     this.selectedArea = this.area;
   }
   optBtn(){
