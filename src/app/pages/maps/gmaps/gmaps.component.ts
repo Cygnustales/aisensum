@@ -50,7 +50,7 @@ export class GmapsComponent {
       value:3
     },
     { 
-      name: 'Families',
+      name: 'Family',
       value:2
     },
     { 
@@ -323,6 +323,7 @@ export class GmapsComponent {
         
       }
       this.optimized = optemp;
+      this.btlVal();
       this.buildChart();
     }
   }

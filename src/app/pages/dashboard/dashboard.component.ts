@@ -13,10 +13,10 @@ export class DashboardComponent {
   type = 'Jakarta';
   types = ['Jakarta'];
   stage = "Life Stage"
-  stages = ['Life Stages', 'Banking Products ', 'Segment']
+  stages = ['Life Stages', 'Banking Products ', 'Customer Value']
   areai = 'Month';
   areas = ['Jan 2018', 'Feb 2018', 'March 2018', 'April 2018', 'May 2018', 'June 2018'];
-  month = "Month";
+  month = "Jan 2018";
   months = ['Jan 2018', 'Feb 2018', 'March 2018', 'April 2018', 'May 2018', 'June 2018'];
   options: any = {};
   losted: any = {};
@@ -24,13 +24,200 @@ export class DashboardComponent {
   temperature = 24;
   temperatureOff = false;
   temperatureMode = 'cool';
-
+  data1:any;
+  data2:any;
+  data3:any;
   humidity = 87;
   humidityOff = false;
   humidityMode = 'heat';
   colors: any;
   themeSubscription: any;
   img:any;
+  selectedMonth : any;
+  indo: boolean = true;
+  life = {
+    month: [
+      {
+        name : 'Jan 2018',
+        data : {
+          1 : 10,
+          2 : 40,
+          3 : 20,
+          4 : 30
+        }
+      },
+      {
+        name :'Feb 2018',
+        data : {
+          1 : 11,
+          2 : 42,
+          3 : 19,
+          4 : 28
+        }
+      },
+      {
+        name : 'March 2018',
+        data: {
+          1 : 12,
+          2 : 41,
+          3 : 18,
+          4 : 29
+        }
+      },
+      {
+        name :'April 2018', 
+        data : {
+          1 : 11,
+          2 : 40,
+          3 : 19,
+          4 : 30
+        }
+      },
+      {
+        name:'May 2018',
+        data: {
+          1 : 10,
+          2 : 42,
+          3 : 20,
+          4 : 28
+        }
+      },
+      {
+        name:'June 2018', 
+        data: {
+          1 : 9,
+          2 : 41,
+          3 : 21,
+          4 : 29
+        }
+      }
+    ]
+  }
+
+  customer = {
+    month: [
+      {
+        name : 'Jan 2018',
+        data : {
+          1 : 25,
+          2 : 30,
+          3 : 20,
+          4 : 25
+        }
+      },
+      {
+        name :'Feb 2018',
+        data : {
+          1 : 27,
+          2 : 32,
+          3 : 21,
+          4 : 20
+        }
+      },
+      {
+        name : 'March 2018',
+        data: {
+          1 : 31,
+          2 : 31,
+          3 : 22,
+          4 : 16
+        }
+      },
+      {
+        name :'April 2018', 
+        data : {
+          1 : 32,
+          2 : 31,
+          3 : 23,
+          4 : 18
+        }
+      },
+      {
+        name:'May 2018',
+        data: {
+          1 : 31,
+          2 : 29,
+          3 : 23,
+          4 : 14
+        }
+      },
+      {
+        name:'June 2018', 
+        data: {
+          1 : 32,
+          2 : 30,
+          3 : 20,
+          4 : 18
+        }
+      }
+    ]
+  }
+
+  bank = {
+    month: [
+      {
+        name : 'Jan 2018',
+        data : {
+          1 : 25,
+          2 : 40,
+          3 : 10,
+          4 : 5,
+          5 : 20
+        }
+      },
+      {
+        name :'Feb 2018',
+        data : {
+          1 : 26,
+          2 : 41,
+          3 : 10,
+          4 : 6,
+          5 : 17
+          
+        }
+      },
+      {
+        name : 'March 2018',
+        data: {
+          1 : 26,
+          2 : 41,
+          3 : 12,
+          4 : 8,
+          5 : 12
+        }
+      },
+      {
+        name :'April 2018', 
+        data : {
+          1 : 27,
+          2 : 41,
+          3 : 12,
+          4 : 8,
+          5 : 12
+        }
+      },
+      {
+        name:'May 2018',
+        data: {
+          1 : 28,
+          2 : 42,
+          3 : 13,
+          4 : 9,
+          5 : 8
+        }
+      },
+      {
+        name:'June 2018', 
+        data: {
+          1 : 28,
+          2 : 42,
+          3 : 13,
+          4 : 10,
+          5 : 7
+        }
+      }
+    ]
+  }
 
   constructor(private routes:Router, private theme: NbThemeService) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
@@ -40,11 +227,15 @@ export class DashboardComponent {
   ngOnInit(): void {
     this.areaChart();
     this.lost();
-    this.pie();
+    //this.pie();
+    this.selectedMonth = 'Jan 2018';
+    //console.log(this.life.month)
+    this.selctLost('Life Stages');
+    this.selectMonth('Jan 2018');
   }
 
   tabs(event){
-    console.log(event.tabTitle)
+    //console.log(event.tabTitle)
     if(event.tabTitle === 'Customer Feedback'){
       this.img = './assets/images/cf.png';
     }else{
@@ -57,6 +248,21 @@ export class DashboardComponent {
     if(p === 'Life Stages'){
       this.pie();
     }else if(p === 'Banking Products '){
+      this.banking();
+    }else{
+      this.segment();
+    }
+  }
+
+  selectMonth(t){
+    console.log(t)
+    console.log(this.stage)
+    // this.selectedMonth = t;
+    this.month = t;
+   // this.pie();
+    if(this.stage === 'Life Stages'){
+      this.pie();
+    }else if(this.stage === 'Banking Products '){
       this.banking();
     }else{
       this.segment();
@@ -412,6 +618,12 @@ pie(){
     const colors = config.variables;
     const echarts: any = config.variables.echarts;
 
+    this.life.month.forEach(arr => {  
+      if(arr.name == this.month){
+        this.data1 = arr.data;
+      }
+    });
+
     this.pies = {
       backgroundColor: echarts.bg,
       color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight],
@@ -439,7 +651,7 @@ pie(){
       legend: {
         orient: 'horizontal',
         top: 'bottom',
-        data: ['Millenials', 'Young Adult', 'Famuilies', 'Traditional'],
+        data: ['Millenials', 'Young Adult', 'Family', 'Traditional'],
         textStyle: {
           color: echarts.textColor,
         },
@@ -451,10 +663,10 @@ pie(){
           radius: '80%',
           center: ['50%', '50%'],
           data: [
-            { value: 10, name: 'Millenials' },
-            { value: 40, name: 'Young Adult' },
-            { value: 20, name: 'Families' },
-            { value: 30, name: 'Traditional' },
+            { value: this.data1['1'], name: 'Millenials' },
+            { value: this.data1['2'], name: 'Young Adult' },
+            { value: this.data1['3'], name: 'Family' },
+            { value: this.data1['4'], name: 'Traditional' },
           ],
           itemStyle: {
             emphasis: {
@@ -488,6 +700,12 @@ banking(){
 
     const colors = config.variables;
     const echarts: any = config.variables.echarts;
+
+    this.bank.month.forEach(arr => {  
+      if(arr.name == this.month){
+        this.data2 = arr.data;
+      }
+    });
 
     this.pies = {
       backgroundColor: echarts.bg,
@@ -528,11 +746,11 @@ banking(){
           radius: '80%',
           center: ['50%', '50%'],
           data: [
-            { value: 25, name: 'Creadit Card' },
-            { value: 40, name: 'Saving' },
-            { value: 10, name: 'Insurance' },
-            { value: 5, name: 'Investment' },
-            { value: 20, name: 'Loan' },
+            { value: this.data2['1'], name: 'Creadit Card' },
+            { value: this.data2['2'], name: 'Saving' },
+            { value: this.data2['3'], name: 'Insurance' },
+            { value: this.data2['4'], name: 'Investment' },
+            { value: this.data2['5'], name: 'Loan' },
           ],
           itemStyle: {
             emphasis: {
@@ -567,7 +785,11 @@ segment(){
 
     const colors = config.variables;
     const echarts: any = config.variables.echarts;
-
+    this.customer.month.forEach(arr => {  
+      if(arr.name == this.month){
+        this.data3 = arr.data;
+      }
+    });
     this.pies = {
       backgroundColor: echarts.bg,
       color: [colors.warningLight, colors.infoLight, colors.dangerLight, colors.successLight, colors.primaryLight],
@@ -607,10 +829,10 @@ segment(){
           radius: '80%',
           center: ['50%', '50%'],
           data: [
-            { value: 25, name: 'Hi Net' },
-            { value: 30, name: 'Deal Hunter' },
-            { value: 20, name: 'Occasional' },
-            { value: 25, name: 'Opportunity' },
+            { value: this.data3['1'], name: 'Hi Net' },
+            { value: this.data3['2'], name: 'Deal Hunters' },
+            { value: this.data3['3'], name: 'Occasional' },
+            { value: this.data3['4'], name: 'Opportunity' },
           ],
           itemStyle: {
             emphasis: {
@@ -641,7 +863,11 @@ segment(){
 
 
   mapBtn(p){
-    this.routes.navigateByUrl('/churn/lost/area?id='+p)
+    if(p === 0){
+      this.indo = false
+    }else{
+      this.routes.navigateByUrl('/churn/lost/area?id='+p)
+    }
   }
 
   goAway(){

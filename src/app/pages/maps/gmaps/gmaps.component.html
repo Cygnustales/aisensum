@@ -76,7 +76,7 @@
 </div>
 <div class="col-xxxl-12">
     <nb-card>
-        <nb-card-header>Customer Stage Specific Levers</nb-card-header>
+        <nb-card-header>Customer Stage Specific Levers <div align="right" style="float: right;"><button type="button" (click)="sim()" class="btn btn-primary btn-tn">Simulate Churn Rate</button></div></nb-card-header>
         <nb-card-body>
             <div class="combined1">
                     <div align="left" style="padding:10px;">
@@ -140,7 +140,7 @@
                                         <select class="form-control">
                                             <option>Millenials</option>
                                             <option>Young Adult</option>
-                                            <option>Families</option>
+                                            <option>Family</option>
                                             <option>Traditional</option>
                                         </select>
                                     </div>
@@ -181,7 +181,7 @@
                             <th>Trial</th>
                             <th>Onboarding</th>
                             <th>Growth</th>
-                            <th>Renewall</th>
+                            <th>Renewal</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -256,14 +256,14 @@
                                         <th>Trial</th>
                                         <th>Onboarding</th>
                                         <th>Growth</th>
-                                        <th>Renewall</th>
+                                        <th>Renewal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                         <tr>
                                                 <td style="text-align: left; padding-left:10px;">BTL Marketing</td>
                                                 <td style="text-align: center; background-color: darkcyan; font-weight: bold; color: white;">
-                                                    <input type="text"value="70%" maxlength="3" size="3" [(ngModel)]="btl" (ngModelChange)="btlVal()" style="text-align: right;background-color: transparent;color: white; font-weight: bold;border: none;">%
+                                                    <input type="text"value="70%" maxlength="3" size="3" [(ngModel)]="btl"  style="text-align: right;background-color: transparent;color: white; font-weight: bold;border: none;">%
                                                 </td>
                                                 <td>{{btl1}}%</td>
                                                 <td>{{btl2}}%</td>

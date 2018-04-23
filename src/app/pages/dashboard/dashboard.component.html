@@ -37,7 +37,7 @@
                                 {{ month }}
                               </button>
                               <ul class="dropdown-menu" ngbDropdownMenu>
-                                <li class="dropdown-item" *ngFor="let t of months" (click)="month = t">{{ t }}</li>
+                                <li class="dropdown-item" *ngFor="let t of months" (click)="selectMonth(t)">{{ t }}</li>
                               </ul>
                             </div>
                           </div>
@@ -47,7 +47,7 @@
                   </div>
               <div class="combined" >
                 <div align="center">
-                  <div class="dropdown col-5" style="display:inline-block;" ngbDropdown>
+                  <!--<div class="dropdown col-5" style="display:inline-block;" ngbDropdown>
                       <button type="button" ngbDropdownToggle class="btn"
                               [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
                         {{ type }}
@@ -55,9 +55,9 @@
                       <ul class="dropdown-menu" ngbDropdownMenu>
                         <li class="dropdown-item" *ngFor="let t of types" (click)="type = t">{{ t }}</li>
                       </ul>
-                    </div>
+                    </div>-->
   
-                    <div class="dropdown col-6" style="display:inline-block;" ngbDropdown>
+                    <!--<div class="dropdown col-6" style="display:inline-block;" ngbDropdown>
                         <button type="button" ngbDropdownToggle class="btn"
                                 [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
                           {{ areai }}
@@ -65,9 +65,12 @@
                         <ul class="dropdown-menu" ngbDropdownMenu>
                           <li class="dropdown-item" *ngFor="let t of areas" (click)="areai = t">{{ t }}</li>
                         </ul>
-                      </div>
+                      </div>-->
                     </div>
-                  <div align="center">
+                    <div align="center" *ngIf="indo">
+                        <img class="indo" src="./assets/images/maps/indo.png" (click)="mapBtn(0)">
+                    </div>
+                  <div align="center" *ngIf="!indo">
                       <img class="jakbar" src="./assets/images/maps/Jakbar.png" (click)="mapBtn(6)">
                       <img class="cengkareng" src="./assets/images/maps/Cengkareng.png" (click)="mapBtn(2)">
                       <img class="kalideres" src="./assets/images/maps/Kalideres.png" (click)="mapBtn(1)">
