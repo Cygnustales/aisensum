@@ -131,7 +131,10 @@ export class GmapsComponent {
   ch3:any = 0;
   dec1:any = 0;
   dec2:any = 0;
-
+  peta1:any;
+  peta2:any;
+  peta3:any;
+  peta4:any;
   constructor(private service: SmartTableService,private theme: NbThemeService, private route: ActivatedRoute, private routes:Router) {
     const data = this.service.getData();
     this.source.load(data);
@@ -143,22 +146,40 @@ export class GmapsComponent {
     this.params =  this.route.snapshot.queryParamMap.get('id');
     if(this.params === '1'){
       this.title = 'Kalideres'
-      this.peta = './assets/images/maps/xdr.png';
+      this.peta1 = './assets/images/maps/kalideres/1.png';
+      this.peta2 = './assets/images/maps/kalideres/2.png';
+      this.peta3 = './assets/images/maps/kalideres/3.png';
+      this.peta4 = './assets/images/maps/kalideres/4.png';
     }else if(this.params === '2'){
       this.title = 'Cengkareng'
-      this.peta = './assets/images/maps/ckg.png';
+      this.peta1 = './assets/images/maps/Cengkareng/1.png';
+      this.peta2 = './assets/images/maps/Cengkareng/2.png';
+      this.peta3 = './assets/images/maps/Cengkareng/3.png';
+      this.peta4 = './assets/images/maps/Cengkareng/4.png';
     }else if(this.params === '3'){
       this.title = 'Kebon Jeruk'
-      this.peta = './assets/images/maps/kbj.png';
+      this.peta1 = './assets/images/maps/Kebon-Jeruk/1.png';
+      this.peta2 = './assets/images/maps/Kebon-Jeruk/2.png';
+      this.peta3 = './assets/images/maps/Kebon-Jeruk/3.png';
+      this.peta4 = './assets/images/maps/Kebon-Jeruk/4.png';
     }else if(this.params === '4'){
       this.title = 'Grogol'
-      this.peta = './assets/images/maps/grg.png';
+      this.peta1 = './assets/images/maps/kalideres/1.png';
+      this.peta2 = './assets/images/maps/kalideres/2.png';
+      this.peta3 = './assets/images/maps/kalideres/3.png';
+      this.peta4 = './assets/images/maps/kalideres/4.png';
     }else if(this.params === '5'){
       this.title = 'Kembangan'
-      this.peta = './assets/images/maps/kmb.png';
+      this.peta1 = './assets/images/maps/Kembangan/1.png';
+      this.peta2 = './assets/images/maps/Kembangan/2.png';
+      this.peta3 = './assets/images/maps/Kembangan/3.png';
+      this.peta4 = './assets/images/maps/Kembangan/4.png';
     }else if(this.params === '6'){
       this.title = 'Jakarta Barat'
-      this.peta = './assets/images/maps/jbr.png';
+      this.peta1 = './assets/images/maps/Jakbar/1.png';
+      this.peta2 = './assets/images/maps/Jakbar/2.png';
+      this.peta3 = './assets/images/maps/Jakbar/3.png';
+      this.peta4 = './assets/images/maps/Jakbar/4.png';
     }
     //this.segment();
     this.btlVal();
@@ -206,8 +227,39 @@ export class GmapsComponent {
     this.ch3 = Math.round(this.inc3 - this.inc4)
     this.dec1 = Math.round(this.ch2 * 1.8)
     this.dec2 = Math.round(this.ch3 * 1.8)
-    this.lineChart();
-    console.log(this.ch2)
+    const optemp = [80, 70, 85, 55];
+    const rand = Math.floor(Math.random() * 10);
+    const lev = this.global - ( rand * 5);
+    const multi = 1.5 - (lev/100);
+    const hr = multi * 100;
+    
+    for (let i = 0; i < this.churns.length; i++) {
+      if( i === 4 ){
+        var fr = Math.round(this.churns[i] * (0.1 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
+        optemp.push(g);
+      }
+      if( i === 5 || i === 6 || i === 7 ){
+        var fr = Math.round(this.churns[i] * (0.2 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
+        optemp.push(g);
+      }
+      if( i === 8 || i === 10 ){
+        var fr = Math.round(this.churns[i] * (0.3 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
+        optemp.push(g);
+      }
+      if( i === 9 || i === 11 ){
+        var fr = Math.round(this.churns[i] * (0.4 * hr));
+        var g =  this.churns[i] - Math.round(fr/100);
+        optemp.push(g);
+      }
+      
+    }
+    this.optimized = optemp;
+    this.buildChart();
+    //this.lineChart();
+   // console.log(this.churns.length)
   }
   
   saveThis(){
