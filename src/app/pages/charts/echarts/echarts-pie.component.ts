@@ -37,7 +37,7 @@ export class EchartsPieComponent implements AfterViewInit, OnDestroy {
         },
         series: [
           {
-            name: 'Lost Contribution',
+            name: 'Loss Contribution',
             type: 'pie',
             radius: '70%',
             center: ['50%', '50%'],

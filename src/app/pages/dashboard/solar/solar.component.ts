@@ -8,7 +8,7 @@ declare const echarts: any;
   styleUrls: ['./solar.component.scss'],
   template: `
     <nb-card size="xsmall" class="solar-card">
-      <nb-card-header>Lost Contribution</nb-card-header>
+      <nb-card-header>Loss Contribution</nb-card-header>
       <nb-card-body>
         <div echarts [options]="option" class="echart">
         </div>

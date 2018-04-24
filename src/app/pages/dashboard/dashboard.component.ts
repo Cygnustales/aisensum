@@ -645,7 +645,7 @@ pie(){
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['line'], title:{line:'Line Chart'}},
             restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
+            saveAsImage : {show: true, title: 'Save', name:'Loss Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -658,7 +658,7 @@ pie(){
       },
       series: [
         {
-          name: 'Lost Contribution',
+          name: 'Loss Contribution',
           type: 'pie',
           radius: '80%',
           center: ['50%', '50%'],
@@ -728,7 +728,7 @@ banking(){
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
             restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution (banking)', icon:'image://./assets/images/icon/save.png'}
+            saveAsImage : {show: true, title: 'Save', name:'Loss Contribution (banking)', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -741,7 +741,7 @@ banking(){
       },
       series: [
         {
-          name: 'Lost Contribution',
+          name: 'Loss Contribution',
           type: 'pie',
           radius: '80%',
           center: ['50%', '50%'],
@@ -811,7 +811,7 @@ segment(){
             dataView : {show: false, readOnly: false, title: 'Data View'},
             magicType: {show: true, type: ['bar'], title:{bar:'Bar Chart'}},
             restore : {show: true, title:'Original', icon:'image://./assets/images/icon/restore.png'},
-            saveAsImage : {show: true, title: 'Save', name:'Lost Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
+            saveAsImage : {show: true, title: 'Save', name:'Loss Contribution', type: 'png', icon:'image://./assets/images/icon/save.png'}
         }
     },
       legend: {
@@ -824,7 +824,7 @@ segment(){
       },
       series: [
         {
-          name: 'Lost Contribution',
+          name: 'Loss Contribution',
           type: 'pie',
           radius: '80%',
           center: ['50%', '50%'],
