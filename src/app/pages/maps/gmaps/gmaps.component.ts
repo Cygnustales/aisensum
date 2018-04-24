@@ -36,6 +36,7 @@ export class GmapsComponent {
   global: number = 10;
   segment: any = 10;
   selectedSegment: any = 10;
+  saveFile:boolean = false;
   segmentArray: any = [
     { 
       name: 'Segment',
@@ -209,7 +210,13 @@ export class GmapsComponent {
     console.log(this.ch2)
   }
   
-  
+  saveThis(){
+    this.saveFile = true;
+  }  
+
+  saveIt(){
+    this.saveFile = false;
+  }
 
   goAdd(){
     this.addMode = true;
