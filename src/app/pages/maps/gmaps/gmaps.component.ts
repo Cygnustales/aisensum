@@ -258,7 +258,7 @@ export class GmapsComponent {
     }
     this.optimized = optemp;
     this.buildChart();
-    //this.lineChart();
+    this.lineChart();
    // console.log(this.churns.length)
   }
   

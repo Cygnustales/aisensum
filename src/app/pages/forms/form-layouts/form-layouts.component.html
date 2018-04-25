@@ -21,259 +21,268 @@
       <div class="combined2" style="height: 550px;">
           <div echarts [options]="charts" class="echart"></div>
       </div>
-      <div class="combined" align="left" style="padding:10px;">
-        <table class="gui-table gui-table-rounded" style="width: 100%;">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-          <tbody>
-          <tr>
-              <td>Poor Marketing Response</td>
-              <td>{{ data.p1[0] }}</td>
-              <td>{{ data.p1[1] }}</td>
-          </tr>
-          <tr>
-              <td>Low Customers Satisfaction</td>
-              <td>{{ data.p2[0] }}</td>
-              <td>{{ data.p2[1] }}</td>
-          </tr>
-          <tr>
-              <td>Product Decommissions / Change</td>
-              <td>{{ data.p3[0] }}</td>
-              <td>{{ data.p3[1] }}</td>
-          </tr>
-          <tr>
-              <td>Restriction & Coverage</td>
-              <td>{{ data.p4[0] }}</td>
-              <td>{{ data.p4[1] }}</td>
-          </tr>
-          <tr>
-              <td>Competition Activity</td>
-              <td>{{ data.p5[0] }}</td>
-              <td>{{ data.p5[1] }}</td>
-          </tr>
-          <tr>
-              <td>Negative Media Buzz</td>
-              <td>{{ data.p6[0] }}</td>
-              <td>{{ data.p6[1] }}</td>
-          </tr>
-          <tr>
-              <td>Socio Cultural Trends</td>
-              <td>{{ data.p7[0] }}</td>
-              <td>{{ data.p7[1] }}</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="combined2" align="center">     
-          <table class="zui-table zui-table-rounded">
-              <thead>
-                  <tr>
-                      <th colspan="2">Trial</th>
-                      <th colspan="2">Onboarding</th>
-                      <th colspan="2">Growth</th>
-                      <th colspan="2">Renewal</th>
-                  </tr>
-              </thead>
-              <tr>
-                  <th>Interaction with Trial</th>
-                  <th>Predictive Strength</th>
-                  <th>Interaction with Onboarding</th>
-                  <th>Predictive Strength</th>
-                  <th>Interaction with Expansion</th>
-                  <th>Predictive Strength</th>
-                  <th>Interaction with Renewal</th>
-                  <th>Predictive Strength</th>
-              </tr>
-              <tbody>
-                  <tr>
-                      <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p1[2]" [style.width]="data.p1[3]"></div>   
-                            </div>
-                      </td>
-                        <td>{{ data.p1[3] }}</td>
-                        <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p1[4]" [style.width]="data.p1[5]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p1[5] }}</td>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p1[6]" [style.width]="data.p1[7]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p1[7] }}</td>
-                        <td>
-                          <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p1[8]" [style.width]="data.p1[9]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p1[9] }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p2[2]" [style.width]="data.p2[3]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p2[3] }}</td>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p2[4]" [style.width]="data.p2[5]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p2[5] }}</td>
-                        <td>
-                            <div class="bars">
-                                    <div class="inside" [style.backgroundColor]="data.p2[6]" [style.width]="data.p2[7]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p2[7] }}</td>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p2[8]" [style.width]="data.p2[9]"></div> 
-                            </div>
-                        <td>{{ data.p2[9] }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p3[2]" [style.width]="data.p3[3]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p3[3] }}</td>
-                        <td>
-                            <div class="bars">
-                                    <div class="inside" [style.backgroundColor]="data.p3[4]" [style.width]="data.p3[5]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p3[5] }}</td>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p3[6]" [style.width]="data.p3[7]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p3[7] }}</td>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p3[8]" [style.width]="data.p3[9]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p3[9] }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p4[2]" [style.width]="data.p4[3]"></div> 
-                            </div>
-                        </td>
-                            <td>{{ data.p4[3] }}</td>
-                          <td>
-                            <div class="bars">
-                                    <div class="inside" [style.backgroundColor]="data.p4[4]" [style.width]="data.p4[5]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p4[5] }}</td>
-                          <td>
-                            <div class="bars">
-                               <div class="inside" [style.backgroundColor]="data.p4[6]" [style.width]="data.p4[7]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p4[7] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p4[8]" [style.width]="data.p4[9]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p4[9] }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p5[2]" [style.width]="data.p5[3]"></div> 
-                            </div>
-                        </td>
-                        <td>{{ data.p5[3] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p5[4]" [style.width]="data.p5[5]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p5[5] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p5[6]" [style.width]="data.p5[7]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p5[7] }}</td>
-                          <td>
-                           <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p5[8]" [style.width]="data.p5[9]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p5[9] }}</td>
-                      </tr>
-                      <tr>
-                          <td>
-                             <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p6[2]" [style.width]="data.p6[3]"></div> 
-                            </div>
-                          </td>
-                          <td>{{ data.p6[3] }}</td>
-                            <td>
-                                 <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p6[4]" [style.width]="data.p6[5]"></div>
-                            </div>
-                            </td>
-                            <td>{{ data.p6[5] }}</td>
-                            <td>
-                                 <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p6[6]" [style.width]="data.p6[7]"></div>
-                            </div>
-                            </td>
-                            <td>{{ data.p6[7] }}</td>
-                            <td>
-                                 <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p6[8]" [style.width]="data.p6[9]"></div>
-                            </div>
-                            </td>
-                            <td>{{ data.p6[9] }}</td>
-                      </tr>
-                      <tr>
-                          <td>
-                              <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p7[2]" [style.width]="data.p7[3]"></div>
-                            </div>
-                          </td>
-                          <td>{{ data.p7[3] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p7[4]" [style.width]="data.p7[5]"></div>
-                            </div>
-                          </td>
-                          <td>{{ data.p7[5] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p7[6]" [style.width]="data.p7[7]"></div>
-                            </div>
-                          </td>
-                          <td>{{ data.p7[7] }}</td>
-                          <td>
-                            <div class="bars">
-                                <div class="inside" [style.backgroundColor]="data.p7[8]" [style.width]="data.p7[9]"></div>
-                            </div>
-                          </td>
-                          <td>{{ data.p7[9] }}</td>
-                      </tr>
-              </tbody>
-          </table>
-        </div>
       </nb-card-body>
     </nb-card>
+  </div>
+  <div class="col-xxxl-12">
+      <nb-card>
+          <!--><nb-card-header></nb-card-header>-->
+          <nb-card-body>
+            <div style="margin-top:70px;">
+            <div class="combined" align="left" style="padding:10px;">
+                <table class="gui-table gui-table-rounded" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                  <tbody>
+                  <tr>
+                      <td>Poor Marketing Response</td>
+                      <td>{{ data.p1[0] }}</td>
+                      <td>{{ data.p1[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Low Customers Satisfaction</td>
+                      <td>{{ data.p2[0] }}</td>
+                      <td>{{ data.p2[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Product Decommissions / Change</td>
+                      <td>{{ data.p3[0] }}</td>
+                      <td>{{ data.p3[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Restriction & Coverage</td>
+                      <td>{{ data.p4[0] }}</td>
+                      <td>{{ data.p4[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Competition Activity</td>
+                      <td>{{ data.p5[0] }}</td>
+                      <td>{{ data.p5[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Negative Media Buzz</td>
+                      <td>{{ data.p6[0] }}</td>
+                      <td>{{ data.p6[1] }}</td>
+                  </tr>
+                  <tr>
+                      <td>Socio Cultural Trends</td>
+                      <td>{{ data.p7[0] }}</td>
+                      <td>{{ data.p7[1] }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="combined2" align="center">     
+                  <table class="zui-table zui-table-rounded">
+                      <thead>
+                          <tr>
+                              <th colspan="2">Trial</th>
+                              <th colspan="2">Onboarding</th>
+                              <th colspan="2">Growth</th>
+                              <th colspan="2">Renewal</th>
+                          </tr>
+                      </thead>
+                      <tr>
+                          <th>Interaction with Trial</th>
+                          <th>Predictive Strength</th>
+                          <th>Interaction with Onboarding</th>
+                          <th>Predictive Strength</th>
+                          <th>Interaction with Expansion</th>
+                          <th>Predictive Strength</th>
+                          <th>Interaction with Renewal</th>
+                          <th>Predictive Strength</th>
+                      </tr>
+                      <tbody>
+                          <tr>
+                              <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p1[2]" [style.width]="data.p1[3]"></div>   
+                                    </div>
+                              </td>
+                                <td>{{ data.p1[3] }}</td>
+                                <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p1[4]" [style.width]="data.p1[5]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p1[5] }}</td>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p1[6]" [style.width]="data.p1[7]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p1[7] }}</td>
+                                <td>
+                                  <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p1[8]" [style.width]="data.p1[9]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p1[9] }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p2[2]" [style.width]="data.p2[3]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p2[3] }}</td>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p2[4]" [style.width]="data.p2[5]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p2[5] }}</td>
+                                <td>
+                                    <div class="bars">
+                                            <div class="inside" [style.backgroundColor]="data.p2[6]" [style.width]="data.p2[7]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p2[7] }}</td>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p2[8]" [style.width]="data.p2[9]"></div> 
+                                    </div>
+                                <td>{{ data.p2[9] }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p3[2]" [style.width]="data.p3[3]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p3[3] }}</td>
+                                <td>
+                                    <div class="bars">
+                                            <div class="inside" [style.backgroundColor]="data.p3[4]" [style.width]="data.p3[5]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p3[5] }}</td>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p3[6]" [style.width]="data.p3[7]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p3[7] }}</td>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p3[8]" [style.width]="data.p3[9]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p3[9] }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p4[2]" [style.width]="data.p4[3]"></div> 
+                                    </div>
+                                </td>
+                                    <td>{{ data.p4[3] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                            <div class="inside" [style.backgroundColor]="data.p4[4]" [style.width]="data.p4[5]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p4[5] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                       <div class="inside" [style.backgroundColor]="data.p4[6]" [style.width]="data.p4[7]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p4[7] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p4[8]" [style.width]="data.p4[9]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p4[9] }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p5[2]" [style.width]="data.p5[3]"></div> 
+                                    </div>
+                                </td>
+                                <td>{{ data.p5[3] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p5[4]" [style.width]="data.p5[5]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p5[5] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p5[6]" [style.width]="data.p5[7]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p5[7] }}</td>
+                                  <td>
+                                   <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p5[8]" [style.width]="data.p5[9]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p5[9] }}</td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                     <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p6[2]" [style.width]="data.p6[3]"></div> 
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p6[3] }}</td>
+                                    <td>
+                                         <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p6[4]" [style.width]="data.p6[5]"></div>
+                                    </div>
+                                    </td>
+                                    <td>{{ data.p6[5] }}</td>
+                                    <td>
+                                         <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p6[6]" [style.width]="data.p6[7]"></div>
+                                    </div>
+                                    </td>
+                                    <td>{{ data.p6[7] }}</td>
+                                    <td>
+                                         <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p6[8]" [style.width]="data.p6[9]"></div>
+                                    </div>
+                                    </td>
+                                    <td>{{ data.p6[9] }}</td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p7[2]" [style.width]="data.p7[3]"></div>
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p7[3] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p7[4]" [style.width]="data.p7[5]"></div>
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p7[5] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p7[6]" [style.width]="data.p7[7]"></div>
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p7[7] }}</td>
+                                  <td>
+                                    <div class="bars">
+                                        <div class="inside" [style.backgroundColor]="data.p7[8]" [style.width]="data.p7[9]"></div>
+                                    </div>
+                                  </td>
+                                  <td>{{ data.p7[9] }}</td>
+                              </tr>
+                      </tbody>
+                  </table>
+                </div>
+            </div>
+          </nb-card-body>
+      </nb-card>
   </div>
