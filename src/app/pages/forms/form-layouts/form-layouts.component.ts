@@ -95,73 +95,73 @@ export class FormLayoutsComponent {
     p10: ['4%','4%','4%'],
   }
 
-  mcengkareng = './assets/images/maps/Cengkareng/jan.png';
-  mgrogol = './assets/images/maps/Grogol/jan.png';
-  mjakbar = './assets/images/maps/Jakbar/jan.png';
-  mkalideres = './assets/images/maps/kalideres/jan.png';
-  mjeruk = './assets/images/maps/Kebon-Jeruk/jan.png';
-  mkembangan = './assets/images/maps/Kembangan/jan.png';
+  mcengkareng = './assets/images/maps/detail/Cengkareng/jan.png';
+  mgrogol = './assets/images/maps/detail/Grogol/jan.png';
+  mjakbar = './assets/images/maps/detail/Jakbar/jan.png';
+  mkalideres = './assets/images/maps/detail/kalideres/jan.png';
+  mjeruk = './assets/images/maps/detail/kebonjeruk/jan.png';
+  mkembangan = './assets/images/maps/detail/kembangan/jan.png';
   month = "Jan 2018";
   months = ['Jan 2018', 'Feb 2018', 'March 2018', 'April 2018', 'May 2018', 'June 2018'];
   maps = [{
     month: 'Jan 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/jan.png',
-        grogol : './assets/images/maps/Grogol/jan.png',
-        jakbar : './assets/images/maps/Jakbar/jan.png',
-        kalideres : './assets/images/maps/kalideres/jan.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/jan.png',
-        kembangan : './assets/images/maps/Kembangan/feb.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/jan.png',
+        grogol : './assets/images/maps/detail/Grogol/jan.png',
+        jakbar : './assets/images/maps/detail/Jakbar/jan.png',
+        kalideres : './assets/images/maps/detail/kalideres/jan.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/jan.png',
+        kembangan : './assets/images/maps/detail/kembangan/feb.png',
       }
     },{
     month: 'Feb 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/feb.png',
-        grogol : './assets/images/maps/Grogol/feb.png',
-        jakbar : './assets/images/maps/Jakbar/feb.png',
-        kalideres : './assets/images/maps/kalideres/feb.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/feb.png',
-        kembangan : './assets/images/maps/Kembangan/jan.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/feb.png',
+        grogol : './assets/images/maps/detail/Grogol/feb.png',
+        jakbar : './assets/images/maps/detail/Jakbar/feb.png',
+        kalideres : './assets/images/maps/detail/kalideres/feb.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/feb.png',
+        kembangan : './assets/images/maps/detail/kembangan/jan.png',
       }
     },{
     month: 'March 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/mar.png',
-        grogol : './assets/images/maps/Grogol/mar.png',
-        jakbar : './assets/images/maps/Jakbar/mar.png',
-        kalideres : './assets/images/maps/kalideres/mar.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/mar.png',
-        kembangan : './assets/images/maps/Kembangan/mar.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/mar.png',
+        grogol : './assets/images/maps/detail/Grogol/mar.png',
+        jakbar : './assets/images/maps/detail/Jakbar/mar.png',
+        kalideres : './assets/images/maps/detail/kalideres/mar.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/mar.png',
+        kembangan : './assets/images/maps/detail/kembangan/mar.png',
       }
     },{
     month: 'April 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/apr.png',
-        grogol : './assets/images/maps/Grogol/apr.png',
-        jakbar : './assets/images/maps/Jakbar/apr.png',
-        kalideres : './assets/images/maps/kalideres/apr.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/apr.png',
-        kembangan : './assets/images/maps/Kembangan/apr.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/apr.png',
+        grogol : './assets/images/maps/detail/Grogol/apr.png',
+        jakbar : './assets/images/maps/detail/Jakbar/apr.png',
+        kalideres : './assets/images/maps/detail/kalideres/apr.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/apr.png',
+        kembangan : './assets/images/maps/detail/kembangan/apr.png',
       }
     },{
     month: 'May 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/may.png',
-        grogol : './assets/images/maps/Grogol/may.png',
-        jakbar : './assets/images/maps/Jakbar/may.png',
-        kalideres : './assets/images/maps/kalideres/may.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/may.png',
-        kembangan : './assets/images/maps/Kembangan/may.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/may.png',
+        grogol : './assets/images/maps/detail/Grogol/may.png',
+        jakbar : './assets/images/maps/detail/Jakbar/may.png',
+        kalideres : './assets/images/maps/detail/kalideres/may.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/may.png',
+        kembangan : './assets/images/maps/detail/kembangan/may.png',
       }
     },{
     month: 'June 2018',
     map:{
-        cengkareng : './assets/images/maps/Cengkareng/jun.png',
-        grogol : './assets/images/maps/Grogol/jun.png',
-        jakbar : './assets/images/maps/Jakbar/jun.png',
-        kalideres : './assets/images/maps/kalideres/jun.png',
-        jeruk : './assets/images/maps/Kebon-Jeruk/jun.png',
-        kembangan : './assets/images/maps/Kembangan/jun.png',
+        cengkareng : './assets/images/maps/detail/Cengkareng/jun.png',
+        grogol : './assets/images/maps/detail/Grogol/jun.png',
+        jakbar : './assets/images/maps/detail/Jakbar/jun.png',
+        kalideres : './assets/images/maps/detail/kalideres/jun.png',
+        jeruk : './assets/images/maps/detail/kebonjeruk/jun.png',
+        kembangan : './assets/images/maps/detail/kembangan/jun.png',
       }
     },
   ]

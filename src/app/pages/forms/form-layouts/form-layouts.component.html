@@ -7,7 +7,7 @@
   <nb-card class="inline-form-card">
     <nb-card-header>{{ title }}</nb-card-header>
     <nb-card-body>
-      <div class="combined" style="height: 550px;">
+      <div class="combined" style="height: 600px;">
         <div align="center">
                 <div class="dropdown col-6" style="display:inline-block;" ngbDropdown>
                         <button type="button" ngbDropdownToggle class="btn"
@@ -18,13 +18,22 @@
                           <li class="dropdown-item" *ngFor="let t of months" (click)="selectMonth(t)">{{ t }}</li>
                         </ul>
                       </div>
-          <img class="jakbar" [src]="mjakbar" *ngIf="title == 'Jakarta Barat'" (click)="mapBtn(6)">
-          <img class="cengkareng" [src]="mcengkareng" *ngIf="title == 'Cengkareng'" (click)="mapBtn(2)">
+                      <div style="background-image: url(./assets/images/maps/Jakarta.png); background-size: 500px; background-repeat: no-repeat; background-position: center top; margin-top:15px; width: 500px ;height: 500px;">
+                     <!-- <img src="./assets/images/maps/Jakarta.png" class="main-map" style="margin-top:15px;border-radius:5px;cursor:pointer;">-->
+                      <img class="jakbar" [src]="mjakbar" *ngIf="title == 'Jakarta Barat'" (click)="mapBtn(6)">
+                      <img class="cengkareng" [src]="mcengkareng" *ngIf="title == 'Cengkareng'" (click)="mapBtn(2)">
           <img class="kalideres" [src]="mkalideres"  *ngIf="title == 'Kalideres'" (click)="mapBtn(1)">  
           <img class="kembangan" [src]="mkembangan" *ngIf="title == 'Kembangan'" (click)="mapBtn(5)">
           <img class="jeruk" [src]="mjeruk"  *ngIf="title == 'Kebon Jeruk'" (click)="mapBtn(3)">
           <img class="grogol" [src]="mgrogol" *ngIf="title == 'Grogol'" (click)="mapBtn(4)">
-          <img src="./assets/images/maps/Jakarta.png" class="main-map" style="margin-top:15px;border-radius:5px;cursor:pointer;">
+                    </div>
+          <!--<img class="jakbar" [src]="mjakbar" *ngIf="title == 'Jakarta Barat'" (click)="mapBtn(6)">
+          <img class="cengkareng" [src]="mcengkareng" *ngIf="title == 'Cengkareng'" (click)="mapBtn(2)">
+          <img class="kalideres" [src]="mkalideres"  *ngIf="title == 'Kalideres'" (click)="mapBtn(1)">  
+          <img class="kembangan" [src]="mkembangan" *ngIf="title == 'Kembangan'" (click)="mapBtn(5)">
+          <img class="jeruk" [src]="mjeruk"  *ngIf="title == 'Kebon Jeruk'" (click)="mapBtn(3)">
+          <img class="grogol" [src]="mgrogol" *ngIf="title == 'Grogol'" (click)="mapBtn(4)">--->
+          
         </div>
       </div>
       <div class="combined2" style="height: 550px;">
