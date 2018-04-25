@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './form-layouts.component.html',
 })
 export class FormLayoutsComponent {
+  currentTheme:any;
   title:any;
   params:any;
   themeSubscription: any;
