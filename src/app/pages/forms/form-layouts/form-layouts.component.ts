@@ -93,6 +93,79 @@ export class FormLayoutsComponent {
     p9: ['8%','7%'],
     p10: ['4%','4%','4%'],
   }
+
+  mcengkareng = './assets/images/maps/Cengkareng/jan.png';
+  mgrogol = './assets/images/maps/Grogol/jan.png';
+  mjakbar = './assets/images/maps/Jakbar/jan.png';
+  mkalideres = './assets/images/maps/kalideres/jan.png';
+  mjeruk = './assets/images/maps/Kebon-Jeruk/jan.png';
+  mkembangan = './assets/images/maps/Kembangan/jan.png';
+  month = "Jan 2018";
+  months = ['Jan 2018', 'Feb 2018', 'March 2018', 'April 2018', 'May 2018', 'June 2018'];
+  maps = [{
+    month: 'Jan 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/jan.png',
+        grogol : './assets/images/maps/Grogol/jan.png',
+        jakbar : './assets/images/maps/Jakbar/jan.png',
+        kalideres : './assets/images/maps/kalideres/jan.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/jan.png',
+        kembangan : './assets/images/maps/Kembangan/feb.png',
+      }
+    },{
+    month: 'Feb 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/feb.png',
+        grogol : './assets/images/maps/Grogol/feb.png',
+        jakbar : './assets/images/maps/Jakbar/feb.png',
+        kalideres : './assets/images/maps/kalideres/feb.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/feb.png',
+        kembangan : './assets/images/maps/Kembangan/jan.png',
+      }
+    },{
+    month: 'March 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/mar.png',
+        grogol : './assets/images/maps/Grogol/mar.png',
+        jakbar : './assets/images/maps/Jakbar/mar.png',
+        kalideres : './assets/images/maps/kalideres/mar.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/mar.png',
+        kembangan : './assets/images/maps/Kembangan/mar.png',
+      }
+    },{
+    month: 'April 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/apr.png',
+        grogol : './assets/images/maps/Grogol/apr.png',
+        jakbar : './assets/images/maps/Jakbar/apr.png',
+        kalideres : './assets/images/maps/kalideres/apr.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/apr.png',
+        kembangan : './assets/images/maps/Kembangan/apr.png',
+      }
+    },{
+    month: 'May 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/may.png',
+        grogol : './assets/images/maps/Grogol/may.png',
+        jakbar : './assets/images/maps/Jakbar/may.png',
+        kalideres : './assets/images/maps/kalideres/may.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/may.png',
+        kembangan : './assets/images/maps/Kembangan/may.png',
+      }
+    },{
+    month: 'June 2018',
+    map:{
+        cengkareng : './assets/images/maps/Cengkareng/jun.png',
+        grogol : './assets/images/maps/Grogol/jun.png',
+        jakbar : './assets/images/maps/Jakbar/jun.png',
+        kalideres : './assets/images/maps/kalideres/jun.png',
+        jeruk : './assets/images/maps/Kebon-Jeruk/jun.png',
+        kembangan : './assets/images/maps/Kembangan/jun.png',
+      }
+    },
+  ]
+
+
   constructor(private routes:Router, private theme: NbThemeService, private route: ActivatedRoute, private _sanitizer: DomSanitizer) {
 
   }
@@ -100,7 +173,7 @@ export class FormLayoutsComponent {
     this.params =  this.route.snapshot.queryParamMap.get('id');
     if(this.params === '1'){
       this.title = 'Kalideres';
-      console.log(this.kali);
+      //console.log(this.kali);
       this.data = this.kali;
     }else if(this.params === '2'){
       this.title = 'Cengkareng'
@@ -118,10 +191,28 @@ export class FormLayoutsComponent {
       this.title = 'Jakarta Barat'
       this.data = this.bar
     }
+    this.selectMonth('Jan 2018')
     this.segment();
     this.pie();
   }
 
+  selectMonth(t){
+    console.log(t)
+    this.month = t;
+    this.maps.forEach(arr => {  
+      
+      if(arr.month == t){
+        console.log(arr.month)
+        this.mjeruk = arr.map.jeruk
+        this.mcengkareng = arr.map.cengkareng
+        this.mkalideres = arr.map.kalideres
+        this.mjakbar = arr.map.jakbar
+        this.mkembangan = arr.map.kembangan
+        this.mgrogol = arr.map.grogol
+      }
+    });
+
+  }
   getWidth(w) {
     return this._sanitizer.bypassSecurityTrustStyle(w);
   }

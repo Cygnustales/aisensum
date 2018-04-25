@@ -372,7 +372,7 @@ export class GmapsComponent {
     this.selectedSegment = this.segment;
   }
   getArea(){
-    console.log(this.area)
+    //console.log(this.area)
     this.selectedArea = this.area;
   }
   optBtn(){
@@ -380,7 +380,7 @@ export class GmapsComponent {
       alert('Budget Can not be Empty!')
     }else{
       const budget = this.budgets.replace(/,/g,'')
-      console.log(budget)
+      //console.log(budget)
       const multis = 1000000000000;
       const per = budget / multis;
       const cent = Math.round(this.sum+(per * this.sum));
@@ -410,8 +410,8 @@ export class GmapsComponent {
         }
         
       }
-      console.log(optemp)
-      console.log(this.optimized)
+      //console.log(optemp)
+      //console.log(this.optimized)
       this.optimized = optemp;
       this.buildChart();
     }

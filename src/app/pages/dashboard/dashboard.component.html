@@ -68,16 +68,16 @@
                       </div>-->
                     </div>
                     <div align="center" *ngIf="indo">
-                        <img class="indo" src="./assets/images/maps/indo.png" (click)="mapBtn(0)">
+                        <img class="indo" [src]="indomap" (click)="mapBtn(0)">
                     </div>
                   <div align="center" *ngIf="!indo">
-                      <img class="jakbar" src="./assets/images/maps/Jakbar.png" (click)="mapBtn(6)">
-                      <img class="cengkareng" src="./assets/images/maps/Cengkareng.png" (click)="mapBtn(2)">
-                      <img class="kalideres" src="./assets/images/maps/Kalideres.png" (click)="mapBtn(1)">
+                      <img class="jakbar" [src]="jakbar" (click)="mapBtn(6)">
+                      <img class="cengkareng" [src]="cengkareng" (click)="mapBtn(2)">
+                      <img class="kalideres" [src]="kalideres" (click)="mapBtn(1)">
                       
-                      <img class="kembangan" src="./assets/images/maps/Kembangan.png" (click)="mapBtn(5)">
-                      <img class="jeruk" src="./assets/images/maps/Jeruk.png" (click)="mapBtn(3)">
-                      <img class="grogol" src="./assets/images/maps/Grogol.png" (click)="mapBtn(4)">
+                      <img class="kembangan" [src]="kembangan" (click)="mapBtn(5)">
+                      <img class="jeruk" [src]="jeruk" (click)="mapBtn(3)">
+                      <img class="grogol" [src]="grogol" (click)="mapBtn(4)">
                     <img src="./assets/images/maps/Jakarta.png" class="main-map" style="margin-top:15px;border-radius:5px;cursor:pointer;">
                   </div>
               </div>
