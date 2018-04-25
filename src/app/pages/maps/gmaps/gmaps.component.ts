@@ -24,6 +24,7 @@ export class GmapsComponent {
   title:any;
   params:any;
   peta:any;
+  budgets:any = '50000000000';
   options: any = {};
   line: any = {};
   themeSubscription: any;
@@ -182,84 +183,127 @@ export class GmapsComponent {
       this.peta4 = './assets/images/maps/Jakbar/4.png';
     }
     //this.segment();
+    var n = parseInt(this.budgets.replace(/\D/g,''),10);
+    this.budgets = n.toLocaleString();
     this.btlVal();
+    this.optBtn()
   }
 
 
   btlVal(){
-    this.cs = 100 - this.btl;
-    this.btl1 = Math.round(this.btl * 0.2)
-    this.btl2 = Math.round(this.btl * 0.3)
-    this.btl3 = Math.round(this.btl * 0.2)
-    this.btl4 = Math.round(this.btl * 0.4)
-    this.pe1 = Math.round(this.btl1 * 0.3)
-    this.pe2 = Math.round(this.btl2 * 0.3)
-    this.pe3 = Math.round(this.btl3 * 0.3)
-    this.pe4 = Math.round(this.btl4 * 0.3)
-    this.dg1 = Math.round(this.btl1 * 0.3)
-    this.dg2 = Math.round(this.btl2 * 0.3)
-    this.dg3 = Math.round(this.btl3 * 0.3)
-    this.dg4 = Math.round(this.btl4 * 0.3)
-    this.tl1 = Math.round(this.btl1 * 0.1)
-    this.tl2 = Math.round(this.btl2 * 0.1)
-    this.tl3 = Math.round(this.btl3 * 0.1)
-    this.tl4 = Math.round(this.btl4 * 0.1)
-    this.vc1 = Math.round(this.btl1 * 0.3)
-    this.vc2 = Math.round(this.btl2 * 0.3)
-    this.vc3 = Math.round(this.btl3 * 0.3)
-    this.vc4 = Math.round(this.btl4 * 0.3)
-    this.cs1 = Math.round(this.cs * 0.2)
-    this.cs2 = Math.round(this.cs * 0.3)
-    this.cs3 = Math.round(this.cs * 0.2)
-    this.cs4 = Math.round(this.cs * 0.4)
-    this.sum = this.btl1 + this.btl2 + this.btl3 + this.btl4 + this.pe1 + this.pe2+ this.pe3+ this.pe4 +
-      this.dg1 + this.dg2 + this.dg3 + this.dg4 + this.tl1 + this.tl2 + this.tl3 + this.tl4 + this.vc1 + 
-      this.vc2 + this.vc3 + this.vc4 + this.cs1 + this.cs2 + this.cs3 + this.cs4;
-    console.log(this.sum)
-    var inc = 85;
-    var inc1 = Math.round(inc * (this.sum - 0.9)/100);
-    this.inc11 = Math.round(inc1/5.2);
-    this.inc2 = Math.round(this.inc11 - (this.inc11/this.sum)*this.global)
-    this.inc3 = Math.round(this.inc2 - (this.inc11/this.sum)*this.global)
-    this.inc4 = Math.round(this.inc3 - (this.inc3/this.sum)*this.global)
-    this.ch1 = Math.round(this.inc11 - this.inc2)
-    this.ch2 = Math.round(this.inc2 - this.inc3)
-    this.ch3 = Math.round(this.inc3 - this.inc4)
-    this.dec1 = Math.round(this.ch2 * 1.8)
-    this.dec2 = Math.round(this.ch3 * 1.8)
-    const optemp = [80, 70, 85, 55];
-    const rand = Math.floor(Math.random() * 10);
-    const lev = this.global - ( rand * 5);
-    const multi = 1.5 - (lev/100);
-    const hr = multi * 100;
-    
-    for (let i = 0; i < this.churns.length; i++) {
-      if( i === 4 ){
-        var fr = Math.round(this.churns[i] * (0.1 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 5 || i === 6 || i === 7 ){
-        var fr = Math.round(this.churns[i] * (0.2 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 8 || i === 10 ){
-        var fr = Math.round(this.churns[i] * (0.3 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 9 || i === 11 ){
-        var fr = Math.round(this.churns[i] * (0.4 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
+      this.cs = 100 - this.btl;
+      this.btl1 = Math.round(this.btl * 0.2)
+      this.btl2 = Math.round(this.btl * 0.3)
+      this.btl3 = Math.round(this.btl * 0.2)
+      this.btl4 = Math.round(this.btl * 0.4)
+      this.pe1 = Math.round(this.btl1 * 0.3)
+      this.pe2 = Math.round(this.btl2 * 0.3)
+      this.pe3 = Math.round(this.btl3 * 0.3)
+      this.pe4 = Math.round(this.btl4 * 0.3)
+      this.dg1 = Math.round(this.btl1 * 0.3)
+      this.dg2 = Math.round(this.btl2 * 0.3)
+      this.dg3 = Math.round(this.btl3 * 0.3)
+      this.dg4 = Math.round(this.btl4 * 0.3)
+      this.tl1 = Math.round(this.btl1 * 0.1)
+      this.tl2 = Math.round(this.btl2 * 0.1)
+      this.tl3 = Math.round(this.btl3 * 0.1)
+      this.tl4 = Math.round(this.btl4 * 0.1)
+      this.vc1 = Math.round(this.btl1 * 0.3)
+      this.vc2 = Math.round(this.btl2 * 0.3)
+      this.vc3 = Math.round(this.btl3 * 0.3)
+      this.vc4 = Math.round(this.btl4 * 0.3)
+      this.cs1 = Math.round(this.cs * 0.2)
+      this.cs2 = Math.round(this.cs * 0.3)
+      this.cs3 = Math.round(this.cs * 0.2)
+      this.cs4 = Math.round(this.cs * 0.4)
+      this.sum = this.btl1 + this.btl2 + this.btl3 + this.btl4 + this.pe1 + this.pe2+ this.pe3+ this.pe4 +
+        this.dg1 + this.dg2 + this.dg3 + this.dg4 + this.tl1 + this.tl2 + this.tl3 + this.tl4 + this.vc1 + 
+        this.vc2 + this.vc3 + this.vc4 + this.cs1 + this.cs2 + this.cs3 + this.cs4;
+      console.log(this.sum)
+      var inc = 85;
+      var inc1 = Math.round(inc * (this.sum - 0.9)/100);
+      this.inc11 = Math.round(inc1/5.2);
+      this.inc2 = Math.round(this.inc11 - (this.inc11/this.sum)*this.global)
+      this.inc3 = Math.round(this.inc2 - (this.inc11/this.sum)*this.global)
+      this.inc4 = Math.round(this.inc3 - (this.inc3/this.sum)*this.global)
+      this.ch1 = Math.round(this.inc11 - this.inc2)
+      this.ch2 = Math.round(this.inc2 - this.inc3)
+      this.ch3 = Math.round(this.inc3 - this.inc4)
+      this.dec1 = Math.round(this.ch2 * 1.8)
+      this.dec2 = Math.round(this.ch3 * 1.8)
+      const optemp = [80, 70, 85, 55];
+      const rand = Math.floor(Math.random() * 10);
+      const lev = this.global - ( rand * 5);
+      const multi = 1.5 - (lev/100);
+      const hr = multi * 100;
       
-    }
-    this.optimized = optemp;
-    this.buildChart();
-    this.lineChart();
+      for (let i = 0; i < this.churns.length; i++) {
+        if( i === 4 ){
+          var fr = Math.round(this.churns[i] * (0.1 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
+          optemp.push(g);
+        }
+        if( i === 5 || i === 6 || i === 7 ){
+          var fr = Math.round(this.churns[i] * (0.2 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
+          optemp.push(g);
+        }
+        if( i === 8 || i === 10 ){
+          var fr = Math.round(this.churns[i] * (0.3 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
+          optemp.push(g);
+        }
+        if( i === 9 || i === 11 ){
+          var fr = Math.round(this.churns[i] * (0.4 * hr));
+          var g =  this.churns[i] - Math.round(fr/100);
+          optemp.push(g);
+        }
+        
+      }
+      this.optimized = optemp;
+      this.buildChart();
+      this.lineChart();
+    
    // console.log(this.churns.length)
+  }
+
+  budget(){
+    var n = parseInt(this.budgets.replace(/\D/g,''),10);
+    this.budgets = n.toLocaleString();
+    const multi = 1000000000000;
+    const per = this.budgets / multi;
+    const cent = Math.round(this.sum+(per * this.sum));
+    
+    // const optemp = [80, 70, 85, 55];
+    // const multis = 1.5 - (this.budgets/100);
+    // const hr = per;
+    // console.log(hr)
+    // for (let i = 0; i < this.churns.length; i++) {
+    //   if( i === 4 ){
+    //     var fr = Math.round(this.churns[i] * (0.1 * hr));
+    //     var g =  this.churns[i] - Math.round(fr/100);
+    //     console.log(g)
+    //     optemp.push(g);
+    //   }
+    //   if( i === 5 || i === 6 || i === 7 ){
+    //     var fr = Math.round(this.churns[i] * (0.2 * hr));
+    //     var g =  this.churns[i] - Math.round(fr/100);
+    //     optemp.push(g);
+    //   }
+    //   if( i === 8 || i === 10 ){
+    //     var fr = Math.round(this.churns[i] * (0.3 * hr));
+    //     var g =  this.churns[i] - Math.round(fr/100);
+    //     optemp.push(g);
+    //   }
+    //   if( i === 9 || i === 11 ){
+    //     var fr = Math.round(this.churns[i] * (0.4 * hr));
+    //     var g =  this.churns[i] - Math.round(fr/100);
+    //     optemp.push(g);
+    //   }
+      
+    // }
+    // this.optimized = optemp;
+    // this.buildChart();
   }
   
   saveThis(){
@@ -332,42 +376,17 @@ export class GmapsComponent {
     this.selectedArea = this.area;
   }
   optBtn(){
-    const optemp = [80, 70, 85, 55];
-    const multi = 1.5 - (this.global/100);
-    const hr = multi * 100;
-    for (let i = 0; i < this.churns.length; i++) {
-      if( i === 4 ){
-        var fr = Math.round(this.churns[i] * (0.1 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 5 || i === 6 || i === 7 ){
-        var fr = Math.round(this.churns[i] * (0.2 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 8 || i === 10 ){
-        var fr = Math.round(this.churns[i] * (0.3 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      if( i === 9 || i === 11 ){
-        var fr = Math.round(this.churns[i] * (0.4 * hr));
-        var g =  this.churns[i] - Math.round(fr/100);
-        optemp.push(g);
-      }
-      
-    }
-    this.optimized = optemp;
-    this.buildChart();
-  }
-
-  sim(){
-    if(this.lever.length !== 0){
+    if(this.budgets === undefined ){
+      alert('Budget Can not be Empty!')
+    }else{
+      const budget = this.budgets.replace(/,/g,'')
+      console.log(budget)
+      const multis = 1000000000000;
+      const per = budget / multis;
+      const cent = Math.round(this.sum+(per * this.sum));
       const optemp = [80, 70, 85, 55];
-      const lev = this.global - (this.lever.length *5);
-      const multi = 1.5 - (lev/100);
-      const hr = multi * 100;
+      const multi = 1.5 - (this.global/100);
+      const hr = per * 3500;
       for (let i = 0; i < this.churns.length; i++) {
         if( i === 4 ){
           var fr = Math.round(this.churns[i] * (0.1 * hr));
@@ -391,10 +410,52 @@ export class GmapsComponent {
         }
         
       }
+      console.log(optemp)
+      console.log(this.optimized)
       this.optimized = optemp;
-      this.btlVal();
       this.buildChart();
     }
+  }
+
+  sim(){
+    if(this.budgets === 0 ){
+      alert('Budget Can not be Empty!')
+    }else{
+      this.optBtn();
+      this.btlVal();
+    }
+    // if(this.lever.length !== 0){
+    //   const optemp = [80, 70, 85, 55];
+    //   const lev = this.global - (this.lever.length *5);
+    //   const multi = 1.5 - (lev/100);
+    //   const hr = multi * 100;
+    //   for (let i = 0; i < this.churns.length; i++) {
+    //     if( i === 4 ){
+    //       var fr = Math.round(this.churns[i] * (0.1 * hr));
+    //       var g =  this.churns[i] - Math.round(fr/100);
+    //       optemp.push(g);
+    //     }
+    //     if( i === 5 || i === 6 || i === 7 ){
+    //       var fr = Math.round(this.churns[i] * (0.2 * hr));
+    //       var g =  this.churns[i] - Math.round(fr/100);
+    //       optemp.push(g);
+    //     }
+    //     if( i === 8 || i === 10 ){
+    //       var fr = Math.round(this.churns[i] * (0.3 * hr));
+    //       var g =  this.churns[i] - Math.round(fr/100);
+    //       optemp.push(g);
+    //     }
+    //     if( i === 9 || i === 11 ){
+    //       var fr = Math.round(this.churns[i] * (0.4 * hr));
+    //       var g =  this.churns[i] - Math.round(fr/100);
+    //       optemp.push(g);
+    //     }
+        
+    //   }
+    //   this.optimized = optemp;
+     
+      //this.buildChart();
+    
   }
 
   ngAfterViewInit() {
@@ -608,6 +669,7 @@ export class GmapsComponent {
           {
             type: 'category',
             data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            show: false,
             axisTick: {
               alignWithLabel: true,
             },
@@ -637,6 +699,8 @@ export class GmapsComponent {
             axisLabel: {
               textStyle: {
                 color: echarts.textColor,
+                fontSize: 20,
+                fontWeight: 'bold'
               },
             },
           },
@@ -645,6 +709,7 @@ export class GmapsComponent {
         yAxis: [
           {
             type: 'log',
+            show:false,
             axisLine: {
               lineStyle: {
                 color: echarts.axisLineColor,

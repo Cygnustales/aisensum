@@ -86,7 +86,7 @@
                     Rp.
                     </button>
                 </span>
-                <input type="text" class="form-control" placeholder="0">
+                <input type="text" class="form-control" placeholder="0" [(ngModel)]="budgets" (ngModelChange)="budget()" >
             </div>
             <div align="center" style="margin-bottom:10px;">
             <button type="button" (click)="optBtn()" class="btn btn-warning">OPTIMUM ALLOCATION</button>

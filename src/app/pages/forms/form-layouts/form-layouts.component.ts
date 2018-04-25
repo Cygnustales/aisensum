@@ -166,6 +166,7 @@ export class FormLayoutsComponent {
           xAxis: [
             {
               type: 'category',
+              show:false,
               data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
               axisTick: {
                 alignWithLabel: true,
@@ -196,6 +197,8 @@ export class FormLayoutsComponent {
               axisLabel: {
                 textStyle: {
                   color: echarts.textColor,
+                  fontSize: 20,
+                  fontWeight: 'bold'
                 },
               },
             },
@@ -204,6 +207,7 @@ export class FormLayoutsComponent {
           yAxis: [
             {
               type: 'log',
+              show: false,
               axisLine: {
                 lineStyle: {
                   color: echarts.axisLineColor,
