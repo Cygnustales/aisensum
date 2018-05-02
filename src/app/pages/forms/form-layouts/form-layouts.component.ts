@@ -112,7 +112,8 @@ export class FormLayoutsComponent {
         kalideres : './assets/images/maps/detail/kalideres/jan.png',
         jeruk : './assets/images/maps/detail/kebonjeruk/jan.png',
         kembangan : './assets/images/maps/detail/kembangan/feb.png',
-      }
+      },
+    data : this.kali
     },{
     month: 'Feb 2018',
     map:{
@@ -123,6 +124,8 @@ export class FormLayoutsComponent {
         jeruk : './assets/images/maps/detail/kebonjeruk/feb.png',
         kembangan : './assets/images/maps/detail/kembangan/jan.png',
       }
+      ,
+    data : this.kembang
     },{
     month: 'March 2018',
     map:{
@@ -132,7 +135,8 @@ export class FormLayoutsComponent {
         kalideres : './assets/images/maps/detail/kalideres/mar.png',
         jeruk : './assets/images/maps/detail/kebonjeruk/mar.png',
         kembangan : './assets/images/maps/detail/kembangan/mar.png',
-      }
+      },
+      data : this.grogol
     },{
     month: 'April 2018',
     map:{
@@ -142,7 +146,8 @@ export class FormLayoutsComponent {
         kalideres : './assets/images/maps/detail/kalideres/apr.png',
         jeruk : './assets/images/maps/detail/kebonjeruk/apr.png',
         kembangan : './assets/images/maps/detail/kembangan/apr.png',
-      }
+      },
+      data : this.jeruk
     },{
     month: 'May 2018',
     map:{
@@ -152,7 +157,8 @@ export class FormLayoutsComponent {
         kalideres : './assets/images/maps/detail/kalideres/may.png',
         jeruk : './assets/images/maps/detail/kebonjeruk/may.png',
         kembangan : './assets/images/maps/detail/kembangan/may.png',
-      }
+      },
+      data : this.ceng
     },{
     month: 'June 2018',
     map:{
@@ -162,7 +168,8 @@ export class FormLayoutsComponent {
         kalideres : './assets/images/maps/detail/kalideres/jun.png',
         jeruk : './assets/images/maps/detail/kebonjeruk/jun.png',
         kembangan : './assets/images/maps/detail/kembangan/jun.png',
-      }
+      },
+      data : this.bar
     },
   ]
 
@@ -203,13 +210,15 @@ export class FormLayoutsComponent {
     this.maps.forEach(arr => {  
       
       if(arr.month == t){
-        console.log(arr.month)
+        console.log(arr.data)
         this.mjeruk = arr.map.jeruk
         this.mcengkareng = arr.map.cengkareng
         this.mkalideres = arr.map.kalideres
         this.mjakbar = arr.map.jakbar
         this.mkembangan = arr.map.kembangan
         this.mgrogol = arr.map.grogol
+        this.data = arr.data
+        this.segment();
       }
     });
 

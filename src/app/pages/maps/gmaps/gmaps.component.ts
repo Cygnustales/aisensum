@@ -21,6 +21,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   // `,
 })
 export class GmapsComponent {
+  loading: boolean = false;
   title:any;
   params:any;
   peta:any;
@@ -311,7 +312,12 @@ export class GmapsComponent {
   }  
 
   saveIt(){
-    this.saveFile = false;
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false
+      this.saveFile = false;
+    }, 2500);
+    
   }
 
   goAdd(){
