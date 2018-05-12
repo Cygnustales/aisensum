@@ -25,6 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-ng build --prod --base-href "https://cygnustales.github.io/aisensum/"
+ng build --prod --base-href "http://103.253.115.120/Churn/"
+ng build --prod --base-href "http://tourism.aisensum.com/"
 
 angular-cli-ghpages
