@@ -312,11 +312,12 @@ export class GmapsComponent {
   }  
 
   saveIt(){
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false
-      this.saveFile = false;
-    }, 2500);
+    this.routes.navigateByUrl('/churn/results/export')
+    // this.loading = true;
+    // setTimeout(() => {
+    //   this.loading = false
+    //   this.saveFile = false;
+    // }, 2500);
     
   }
 

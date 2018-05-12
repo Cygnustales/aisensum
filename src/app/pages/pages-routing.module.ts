@@ -24,7 +24,7 @@ const routes: Routes = [{
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule',
   }, {
-    path: 'editors',
+    path: 'results',
     loadChildren: './editors/editors.module#EditorsModule',
   }, {
     path: 'lost',

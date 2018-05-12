@@ -9,7 +9,7 @@ const routes: Routes = [{
   path: '',
   component: EditorsComponent,
   children: [{
-    path: 'tinymce',
+    path: 'export',
     component: TinyMCEComponent,
   }, {
     path: 'ckeditor',
